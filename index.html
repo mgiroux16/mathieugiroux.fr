@@ -509,18 +509,14 @@
     <div class="container-narrow">
       <p class="section-label fade-in">Gratuit</p>
       <h2 class="fade-in">Ce que personne ne t'explique<br/>avant d'utiliser l'IA.</h2>
-      <p class="fade-in">5 cas concrets du quotidien + 3 vérités que très peu de gens connaissent. 4 pages, gratuit, sans inscription.</p>
-      <div class="fade-in" style="margin-top:0.5rem;">
-        <a href="lead-magnet.pdf" download class="btn-dark">Télécharger le guide gratuit — PDF</a>
-      </div>
-      <p class="fade-in" style="margin-top:2rem;font-size:0.8rem;color:#aaa;">Ou reçois-le par email :</p>
+      <p class="fade-in">5 cas concrets du quotidien + 3 vérités que très peu de gens connaissent. Entre ton email — le téléchargement démarre automatiquement.</p>
       <form id="subscribe-form" class="fade-in">
         <div class="form-row">
           <input type="email" id="email-input" placeholder="ton@email.fr" required />
-          <button type="submit" class="btn-light">Recevoir par email</button>
+          <button type="submit" class="btn-dark">Recevoir le guide gratuit</button>
         </div>
       </form>
-      <p class="form-success" id="form-success">C'est envoyé. Vérifie ta boite mail.</p>
+      <p class="form-success" id="form-success">C'est parti. Le téléchargement démarre...</p>
       <p class="form-error" id="form-error">Une erreur s'est produite. Réessaie ou écris à contact@mathieugiroux.fr</p>
     </div>
   </section>
@@ -582,10 +578,14 @@
         if (res.ok) {
           document.getElementById('form-success').style.display = 'block';
           this.style.display = 'none';
+          const a = document.createElement('a');
+          a.href = 'lead-magnet.pdf';
+          a.download = 'guide-gratuit-ia-pour-tous.pdf';
+          a.click();
         } else { throw new Error(); }
       } catch {
         document.getElementById('form-error').style.display = 'block';
-        btn.textContent = 'Recevoir les chapitres'; btn.disabled = false;
+        btn.textContent = 'Recevoir le guide gratuit'; btn.disabled = false;
       }
     });
 
