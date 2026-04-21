@@ -566,27 +566,28 @@
     const BEEHIIV_PUBLICATION_ID = '499efb96-8401-45e6-8dad-b8a09e56291c';
     document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const email = document.getElementById('email-input').value;
+      const email = document.getElementById('email-input').value.trim();
       const btn = this.querySelector('button[type="submit"]');
-      btn.textContent = '...'; btn.disabled = true;
-      try {
-        const res = await fetch(`https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, reactivate_existing: false, send_welcome_email: true })
-        });
-        if (res.ok) {
-          document.getElementById('form-success').style.display = 'block';
-          this.style.display = 'none';
-          const a = document.createElement('a');
-          a.href = 'lead-magnet.pdf';
-          a.download = 'guide-gratuit-ia-pour-tous.pdf';
-          a.click();
-        } else { throw new Error(); }
-      } catch {
-        document.getElementById('form-error').style.display = 'block';
-        btn.textContent = 'Recevoir le guide gratuit'; btn.disabled = false;
+
+      // Validation email obligatoire
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('email-input').focus();
+        document.getElementById('email-input').style.borderColor = '#c0392b';
+        return;
       }
+      document.getElementById('email-input').style.borderColor = '';
+
+      btn.textContent = '...'; btn.disabled = true;
+
+      // Déclenche le téléchargement immédiatement après validation email
+      document.getElementById('form-success').style.display = 'block';
+      this.style.display = 'none';
+      const a = document.createElement('a');
+      a.href = 'lead-magnet.pdf';
+      a.download = 'guide-gratuit-ia-pour-tous.pdf';
+      a.click();
+
+      // Beehiiv à connecter quand la publication sera configurée
     });
 
     // Mode édition
