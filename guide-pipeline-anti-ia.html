@@ -42,462 +42,387 @@ body{
   min-height:100vh;
   padding-bottom:120px;
 }
-.wrap{max-width:1060px;margin:0 auto;padding:56px 32px}
+.wrap{max-width:1000px;margin:0 auto;padding:56px 32px}
 @media(max-width:780px){.wrap{padding:36px 20px}}
 
-/* HERO */
 .kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;color:var(--accent);text-transform:uppercase;margin-bottom:20px;display:inline-block;padding:5px 13px;background:var(--accent-bg);border-radius:3px}
-h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);margin-bottom:20px;max-width:880px}
-h1 em{font-style:italic;color:var(--accent);font-weight:500}
-.lede{font-family:'Fraunces',serif;font-size:clamp(1.1rem,1.7vw,1.3rem);line-height:1.5;color:var(--ink-soft);max-width:740px;font-style:italic;font-weight:400;margin-bottom:32px}
-.meta{display:flex;flex-wrap:wrap;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-mute)}
-.meta span{padding:5px 11px;background:var(--bg-soft);border-radius:3px;border:1px solid var(--line)}
-.author-note{margin-top:32px;padding:18px 22px;background:var(--accent-bg);border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:8px;font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,4.5vw,3.5rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);margin-bottom:20px;max-width:860px}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{font-family:'Fraunces',serif;font-size:clamp(1.05rem,1.6vw,1.25rem);line-height:1.55;color:var(--ink-soft);max-width:720px;font-style:italic;margin-bottom:28px}
+.meta{display:flex;flex-wrap:wrap;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-mute)}
+.meta span{padding:4px 11px;background:var(--bg-soft);border-radius:3px;border:1px solid var(--line)}
+.author-note{margin-top:24px;padding:18px 22px;background:var(--accent-bg);border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:8px;font-size:14.5px;color:var(--ink-soft);line-height:1.6}
 .author-note strong{color:var(--accent-dark)}
 
-/* SECTIONS */
-.section{margin:64px 0;scroll-margin-top:24px}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:40px 0 56px;padding:20px 24px;background:var(--bg-card);border:1px solid var(--line);border-radius:10px}
+.legend h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem;color:var(--ink);margin-bottom:12px;grid-column:1/-1}
+.legend-item{display:flex;align-items:flex-start;gap:9px;padding:8px 10px;background:var(--bg-soft);border-radius:6px;font-size:13px;color:var(--ink-soft);line-height:1.45}
+.dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.dot.r{background:var(--red)}
+.dot.g{background:var(--gold)}
+.dot.b{background:var(--accent)}
+
+.section{margin:64px 0;scroll-margin-top:20px}
 .section-label{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
 .section-num{font-family:'Fraunces',serif;font-weight:600;font-size:2rem;color:var(--ink);line-height:1}
-.section-title{font-family:'Fraunces',serif;font-weight:500;font-size:1.55rem;color:var(--ink);letter-spacing:-0.01em}
-.section-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.18em;margin-left:auto}
-.section-intro{font-family:'Fraunces',serif;font-style:italic;font-size:1.02rem;color:var(--ink-soft);margin-bottom:28px;max-width:740px;line-height:1.55}
+.section-title{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;color:var(--ink);letter-spacing:-0.01em}
+.section-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:0.16em;margin-left:auto}
+.section-intro{font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--ink-soft);margin-bottom:24px;max-width:720px;line-height:1.55}
 
-/* CONTENT BLOCKS */
-.block{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;padding:28px 32px;margin-bottom:22px}
+.block{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;padding:26px 30px;margin-bottom:20px}
+.block.red{border-left:4px solid var(--red)}
+.block.gold{border-left:4px solid var(--gold)}
 .block.accent{border-left:4px solid var(--accent)}
 .block.green{border-left:4px solid var(--green)}
-.block.gold{border-left:4px solid var(--gold)}
-.block.red{border-left:4px solid var(--red)}
-.block h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.25rem;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em}
-.block h4{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:var(--ink);margin:20px 0 10px}
-.block p{margin-bottom:12px;color:var(--ink-soft)}
-.block ul,.block ol{padding-left:22px;margin-bottom:12px;color:var(--ink-soft)}
+.block h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem;color:var(--ink);margin-bottom:12px}
+.block h4{font-family:'Fraunces',serif;font-weight:600;font-size:0.98rem;color:var(--ink);margin:18px 0 10px}
+.block p{margin-bottom:12px;color:var(--ink-soft);font-size:15.5px}
+.block p:last-child{margin-bottom:0}
+.block ul,.block ol{padding-left:20px;margin-bottom:12px;color:var(--ink-soft);font-size:15.5px}
 .block li{margin-bottom:6px;line-height:1.6}
 .block strong{color:var(--ink);font-weight:600}
 .block em{color:var(--ink-soft);font-style:italic}
-.block code{font-family:'IBM Plex Mono',monospace;font-size:0.87em;background:var(--bg-soft);padding:2px 7px;border-radius:3px;color:var(--accent-dark);border:1px solid var(--line-soft)}
+.block code{font-family:'IBM Plex Mono',monospace;font-size:0.86em;background:var(--bg-soft);padding:2px 7px;border-radius:3px;color:var(--accent-dark);border:1px solid var(--line-soft)}
 
-/* TABLES */
-.table-wrap{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--line);border-radius:6px}
+.table-wrap{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--line);border-radius:6px}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th{background:var(--bg-soft);font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink);padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);font-weight:600}
-td{padding:11px 14px;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);vertical-align:top;line-height:1.5}
-td code{font-family:'IBM Plex Mono',monospace;font-size:0.91em;background:var(--bg-soft);padding:2px 6px;border-radius:3px;color:var(--accent-dark);border:1px solid var(--line-soft)}
+th{background:var(--bg-soft);font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink);padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);font-weight:600}
+td{padding:10px 14px;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);vertical-align:top;line-height:1.5}
+td code{font-family:'IBM Plex Mono',monospace;font-size:0.9em;background:var(--bg-soft);padding:2px 6px;border-radius:3px;color:var(--accent-dark)}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:var(--bg-soft)}
 
-/* EXAMPLES */
-.example-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 18px}
-@media(max-width:680px){.example-box{grid-template-columns:1fr}}
-.example-col{padding:16px 20px;border-radius:6px;font-size:14px;line-height:1.6}
+.word-cloud{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 14px}
+.pill{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:4px 11px;border-radius:20px;background:var(--red-bg);color:var(--red);border:1px solid rgba(192,57,43,0.2)}
+
+.example-box{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 18px}
+@media(max-width:640px){.example-box{grid-template-columns:1fr}}
+.example-col{padding:14px 18px;border-radius:6px;font-size:14px;line-height:1.6}
 .example-col.bad{background:var(--red-bg);border-left:3px solid var(--red)}
 .example-col.good{background:var(--green-bg);border-left:3px solid var(--green)}
-.example-label{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;font-weight:600;margin-bottom:8px;display:block}
+.example-label{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.18em;font-weight:600;margin-bottom:7px;display:block}
 .example-col.bad .example-label{color:var(--red)}
 .example-col.good .example-label{color:var(--green)}
 
-/* CHECKLIST */
-.checklist{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin:14px 0 18px}
+.checklist{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin:12px 0 18px}
 .checklist-title{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);margin-bottom:12px;font-weight:600}
-.checklist ol{list-style:none;padding:0;margin:0;counter-reset:check}
-.checklist li{padding:7px 0 7px 30px;position:relative;font-size:14px;color:var(--ink-soft);border-bottom:1px dashed var(--line);line-height:1.5}
+.checklist ol{list-style:none;padding:0;margin:0}
+.checklist li{padding:7px 0 7px 28px;position:relative;font-size:14px;color:var(--ink-soft);border-bottom:1px dashed var(--line);line-height:1.5}
 .checklist li:last-child{border-bottom:none}
-.checklist li::before{content:"☐";position:absolute;left:6px;top:7px;color:var(--accent);font-size:15px}
-.checklist li strong{color:var(--ink);font-weight:600}
+.checklist li::before{content:"☐";position:absolute;left:4px;top:7px;color:var(--accent);font-size:15px}
+.checklist li strong{color:var(--ink)}
 
-/* WORD PILL CLOUD */
-.word-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
-.pill{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:4px 11px;border-radius:20px;background:var(--red-bg);color:var(--red);border:1px solid rgba(192,57,43,0.2)}
-
-/* CODE */
-pre.code-block{background:#111c2a;color:#c8daf0;padding:22px 26px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.55;overflow-x:auto;margin:16px 0 20px;border:1px solid #243550}
+pre.code-block{background:#111c2a;color:#c8daf0;padding:20px 24px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.55;overflow-x:auto;margin:14px 0 18px;border:1px solid #243550}
 pre.code-block .comment{color:#5a7a9a;font-style:italic}
 pre.code-block .string{color:#b88a3a}
 pre.code-block .keyword{color:#6aaed6}
 
-/* CALLOUT */
-.callout{background:var(--accent-bg);border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:8px;padding:18px 22px;margin:18px 0}
-.callout-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:8px;font-weight:600}
-.callout p{color:var(--ink-soft);margin-bottom:8px;font-size:14.5px}
-.callout p:last-child{margin-bottom:0}
+.callout{background:var(--accent-bg);border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:8px;padding:16px 20px;margin:16px 0}
+.callout-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:7px;font-weight:600}
+.callout p{color:var(--ink-soft);font-size:14.5px;margin-bottom:0}
 .callout strong{color:var(--accent-dark)}
 
-/* SCORE TABLE */
-.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:14px 0 18px}
-.score-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
-.score-card .score-num{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:600;color:var(--accent);line-height:1}
-.score-card .score-label{font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.4}
+.pullquote{margin:72px auto;max-width:680px;padding:36px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.pullquote blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.15rem,1.9vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:14px}
+.pullquote blockquote em{color:var(--accent)}
+.pullquote cite{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mute);letter-spacing:0.14em;text-transform:uppercase}
 
-/* PULL QUOTE */
-.pullquote{margin:72px auto;max-width:720px;padding:36px 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
-.pullquote blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.35;color:var(--ink);margin-bottom:14px}
-.pullquote blockquote em{color:var(--accent);font-style:italic}
-.pullquote cite{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mute);letter-spacing:0.15em;text-transform:uppercase}
-
-/* FOOTER */
-footer{margin-top:72px;padding-top:32px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-mute);line-height:1.7;max-width:720px}
+footer{margin-top:64px;padding-top:28px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-mute);line-height:1.7;max-width:700px}
 footer strong{color:var(--ink-soft)}
-.foot-sig{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mute)}
+.foot-sig{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mute)}
 
 @keyframes fade-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 header,.section,.pullquote{animation:fade-up .5s ease-out backwards}
-.section:nth-of-type(2){animation-delay:.08s}
-.section:nth-of-type(3){animation-delay:.14s}
-.section:nth-of-type(4){animation-delay:.18s}
+.section:nth-of-type(2){animation-delay:.06s}
+.section:nth-of-type(3){animation-delay:.10s}
+.section:nth-of-type(4){animation-delay:.14s}
+.section:nth-of-type(5){animation-delay:.18s}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<!-- HERO -->
-<header style="margin-bottom:56px">
-  <span class="kicker">Pipeline anti-marqueurs IA · v1</span>
-  <h1>Comment j'ai <em>éliminé les marqueurs IA</em> de mes textes, de A à Z.</h1>
-  <p class="lede">Le système que j'ai construit pour écrire des chapitres de livre avec l'IA sans que ça se voit. Trois agents, une liste de règles, une checklist en 22 points. Tout ce qu'il faut pour reproduire ça.</p>
+<header style="margin-bottom:48px">
+  <span class="kicker">Pipeline anti-marqueurs IA · v2</span>
+  <h1>Tous les <em>marqueurs IA</em> dans un seul guide. Comment les repérer et les éliminer.</h1>
+  <p class="lede">Quatre catégories de marqueurs : typographie visible, Unicode invisible, lexique, structure. Avec la liste complète, des exemples avant/après, une checklist en 22 points et la regex JS prête pour Make ou n8n.</p>
   <div class="meta">
-    <span>3 agents · 22 vérifications</span>
+    <span>4 catégories</span>
     <span>40+ mots bannis</span>
     <span>10 caractères Unicode</span>
+    <span>22 vérifications</span>
     <span>Regex JS incluse</span>
     <span>Mai 2026</span>
   </div>
-  <div class="author-note" style="margin-top:28px">
-    <strong>Pourquoi j'ai fait ça.</strong> Je publie des livres sur l'IA via Amazon KDP. Je génère du contenu avec Claude, mais je refusais de publier quelque chose qui "sonnait IA". Alors j'ai construit une pipeline en 3 agents : un qui génère en respectant des règles précises, un qui évalue et score chaque chapitre, un qui nettoie les problèmes résiduels avant export. Ce guide, c'est l'export de ce que j'ai appris en construisant ça.
+  <div class="author-note">
+    <strong>D'où vient ce guide.</strong> Je publie des livres sur l'IA via Amazon KDP, générés avec Claude. Plutôt que de corriger manuellement à chaque fois, j'ai construit une pipeline avec trois agents (rédacteur, évaluateur, vérificateur) qui appliquent ces règles systématiquement. Ce guide, c'est l'extraction de tout ce que j'ai intégré dans ces agents sur les marqueurs IA.
   </div>
 </header>
 
-<!-- VUE D'ENSEMBLE -->
-<section class="section">
+<div class="legend">
+  <h3>Niveaux de priorité</h3>
+  <div class="legend-item"><span class="dot r"></span><div><strong style="color:var(--red)">Priorité 1</strong> — Signature forte, détectable à la première lecture. À traiter en premier.</div></div>
+  <div class="legend-item"><span class="dot g"></span><div><strong style="color:var(--gold)">Priorité 2</strong> — Caractères invisibles à l'oeil, détectables au byte par les outils anti-IA.</div></div>
+  <div class="legend-item"><span class="dot b"></span><div><strong style="color:var(--accent)">Priorité 3</strong> — Marqueurs sémantiques. C'est là que se joue 70 % de la détection.</div></div>
+</div>
+
+<!-- AXE 1 -->
+<section class="section" id="typo">
   <div class="section-label">
     <span class="section-num">I</span>
-    <h2 class="section-title">Vue d'ensemble de la pipeline</h2>
-    <span class="section-tag">3 agents, 1 flux</span>
+    <h2 class="section-title">Marqueurs typographiques</h2>
+    <span class="section-tag">Priorité 1</span>
   </div>
-  <p class="section-intro">Trois agents distincts, chacun avec une responsabilité claire. L'ordre compte : générer propre est mieux que nettoyer après.</p>
+  <p class="section-intro">La signature la plus visible. Le tiret cadratin reste le marqueur numéro 1 en français : personne ne le tape au clavier au quotidien. Les guillemets courbes suivent de près.</p>
 
-  <div class="block accent">
-    <h3>Agent 1 — Rédacteur (génération)</h3>
-    <p>Il rédige le chapitre en appliquant simultanément toutes les règles de style, de rythme et d'anti-détection. Il n'écrit pas puis corrige : il intègre les contraintes dès la première phrase.</p>
-    <p><strong>Inputs :</strong> brief du chapitre, règles de style ADN, liste de mots bannis, recherches préalables (web + NotebookLM).</p>
-    <p><strong>Output :</strong> un fichier `.md` avec score de confiance /10. Si score &lt; 8.0, il signale les points faibles et propose de régénérer.</p>
+  <div class="block red">
+    <h3>Tirets : le marqueur numéro 1</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Caractère IA</th><th>Unicode</th><th>Remplacer par</th><th>Pourquoi c'est un tell</th></tr></thead>
+        <tbody>
+          <tr><td>Tiret cadratin <code>—</code></td><td><code>U+2014</code></td><td>Virgule, deux-points ou point</td><td>Surnommé "ChatGPT Hyphen". Quasi absent de l'écriture française naturelle au clavier.</td></tr>
+          <tr><td>Tiret demi-cadratin <code>–</code></td><td><code>U+2013</code></td><td>Trait d'union <code>-</code></td><td>Rare au clavier, utilisé automatiquement par les LLM pour les intervalles.</td></tr>
+          <tr><td>Trait d'union insécable <code>‑</code></td><td><code>U+2011</code></td><td>Trait d'union <code>-</code></td><td>Invisible mais détectable.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="example-box">
+      <div class="example-col bad">
+        <span class="example-label">IA, brut</span>
+        Le résultat — après trois essais — était satisfaisant.
+      </div>
+      <div class="example-col good">
+        <span class="example-label">Humain, corrigé</span>
+        Le résultat, après trois essais, était satisfaisant.
+      </div>
+    </div>
   </div>
 
-  <div class="block green">
-    <h3>Agent 2 — Évaluateur (review)</h3>
-    <p>Il lit le chapitre généré et produit un rapport structuré avec score sur 70 points, réparti en 7 critères. Il décide : VALIDE (≥ 55/70), ACCEPTABLE (45-54/70) ou REJET (&lt; 45/70).</p>
-    <p><strong>Ce qu'il vérifie :</strong> hook, ratio narratif/pédagogique, voix humaine, absence de marqueurs IA, grammaire française, cohérence des promesses au lecteur, cohérence des chiffres annoncés.</p>
+  <div class="block red">
+    <h3>Guillemets et apostrophes courbes</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Caractère IA</th><th>Unicode</th><th>Remplacer par</th></tr></thead>
+        <tbody>
+          <tr><td>Guillemet double ouvrant <code>"</code></td><td><code>U+201C</code></td><td><code>"</code> droit</td></tr>
+          <tr><td>Guillemet double fermant <code>"</code></td><td><code>U+201D</code></td><td><code>"</code> droit</td></tr>
+          <tr><td>Guillemet simple ouvrant <code>'</code></td><td><code>U+2018</code></td><td><code>'</code> droit</td></tr>
+          <tr><td>Apostrophe courbe <code>'</code></td><td><code>U+2019</code></td><td><code>'</code> droit</td></tr>
+          <tr><td>Guillemets français <code>« »</code></td><td><code>U+00AB / U+00BB</code></td><td><code>"</code> droits (sauf presse/édition FR)</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div class="block gold">
-    <h3>Agent 3 — Vérificateur pré-export (print-check)</h3>
-    <p>Il passe avant chaque export DOCX/PDF. Il corrige automatiquement ce qu'il peut (tirets em, blocs de code trop larges, caractères Unicode invisibles) et signale ce qui nécessite une intervention manuelle.</p>
+  <div class="block red">
+    <h3>Autres ponctuations suspectes</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Caractère IA</th><th>Unicode</th><th>Remplacer par</th></tr></thead>
+        <tbody>
+          <tr><td>Points de suspension <code>…</code></td><td><code>U+2026</code></td><td>Trois points <code>...</code></td></tr>
+          <tr><td>Puce ronde <code>•</code></td><td><code>U+2022</code></td><td>Tiret <code>-</code></td></tr>
+          <tr><td>Flèche <code>→</code></td><td><code>U+2192</code></td><td><code>-&gt;</code></td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
-<!-- AGENT 1 : RÈGLES DE GÉNÉRATION -->
-<section class="section" id="agent-gen">
+<!-- AXE 2 -->
+<section class="section" id="unicode">
   <div class="section-label">
     <span class="section-num">II</span>
-    <h2 class="section-title">Règles de l'Agent Rédacteur</h2>
-    <span class="section-tag">Ce qu'il applique à chaque génération</span>
+    <h2 class="section-title">Caractères Unicode invisibles</h2>
+    <span class="section-tag">Priorité 2</span>
   </div>
-  <p class="section-intro">Quatre blocs de règles, intégrés dans le prompt système de l'agent. L'ordre reflète la priorité : la voix d'abord, le rythme ensuite, puis l'anti-IA, puis les interdits structurels.</p>
+  <p class="section-intro">Ces caractères ne se voient pas à la lecture mais sont détectables au byte par les outils anti-IA modernes. GPT-5 insère massivement U+202F à la place des espaces standards. Un humain qui tape au clavier n'en produit jamais.</p>
+
+  <div class="block gold">
+    <h3>Les 10 caractères à supprimer ou normaliser</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Caractère</th><th>Unicode</th><th>Effet visible</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Espace insécable</td><td><code>U+00A0</code></td><td>Aucun</td><td>Remplacer par espace normale</td></tr>
+          <tr><td>Espace fine insécable</td><td><code>U+202F</code></td><td>Aucun (massivement utilisée par GPT-5)</td><td>Remplacer par espace normale</td></tr>
+          <tr><td>Espace fine</td><td><code>U+2009</code></td><td>Aucun</td><td>Remplacer par espace normale</td></tr>
+          <tr><td>Espace cadratin</td><td><code>U+2003</code></td><td>Espace large</td><td>Remplacer par espace normale</td></tr>
+          <tr><td>Zero-Width Space</td><td><code>U+200B</code></td><td>Aucun</td><td>Supprimer</td></tr>
+          <tr><td>Zero-Width Joiner</td><td><code>U+200D</code></td><td>Aucun</td><td>Supprimer</td></tr>
+          <tr><td>Zero-Width Non-Joiner</td><td><code>U+200C</code></td><td>Aucun</td><td>Supprimer</td></tr>
+          <tr><td>Word Joiner</td><td><code>U+2060</code></td><td>Aucun</td><td>Supprimer</td></tr>
+          <tr><td>Soft Hyphen</td><td><code>U+00AD</code></td><td>Conditionnel</td><td>Supprimer</td></tr>
+          <tr><td>Byte Order Mark</td><td><code>U+FEFF</code></td><td>Aucun</td><td>Supprimer</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-label">Piège franco-français</div>
+      <p>ChatGPT applique la typographie française parfaite (espace insécable avant <code>:</code> <code>;</code> <code>!</code> <code>?</code>). Techniquement correct, mais aucun humain ne le fait en tapant au clavier. En contexte web/blog/réseaux sociaux, c'est un marqueur. À supprimer. À conserver uniquement en contexte éditorial professionnel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AXE 3 -->
+<section class="section" id="lexique">
+  <div class="section-label">
+    <span class="section-num">III</span>
+    <h2 class="section-title">Marqueurs lexicaux</h2>
+    <span class="section-tag">Priorité 3</span>
+  </div>
+  <p class="section-intro">Les mots qui saturent les sorties non retravaillées de tous les LLM. Un ou deux dans un texte, ça passe. Six ou sept accumulés, c'est terminé.</p>
 
   <div class="block accent">
-    <h3>Bloc 1 — Voix et style</h3>
-    <ul>
-      <li>Tutoiement systématique, "je" narratif assumé</li>
-      <li>Ton calme, direct, chaleureux. Encouragements mesurés, jamais forcés</li>
-      <li>Voix active, éviter la voix passive</li>
-      <li>Phrases courtes et percutantes</li>
-      <li>Appui sur des données et exemples concrets quand c'est possible</li>
-      <li>Langage simple et accessible, pas de jargon non expliqué</li>
-    </ul>
-  </div>
-
-  <div class="block accent">
-    <h3>Bloc 2 — Rythme humain</h3>
-    <ul>
-      <li>Alternance phrases courtes / moyennes / longues (10-15 % de longues)</li>
-      <li>2 respirations naturelles par chapitre : "Et puis...", "Tu vois ?"</li>
-      <li>Transitions organiques, jamais mécaniques</li>
-      <li>2-3 micro-digressions légères par chapitre</li>
-      <li>Paragraphes de longueurs variées, interdit d'avoir tous les paragraphes similaires</li>
-    </ul>
-    <h4>Structure interne du chapitre</h4>
-    <ul>
-      <li>Ouverture : scène concrète ou concept fort (pas le schéma "personnage + problème + révélation IA")</li>
-      <li>Corps : exemple → concept → application, mais varié d'un chapitre à l'autre</li>
-      <li>1 exercice pratique ou question introspective en fin</li>
-      <li>Transition douce vers le chapitre suivant</li>
-    </ul>
-  </div>
-
-  <div class="block red">
-    <h3>Bloc 3 — Anti-IA (interdits absolus)</h3>
-    <ul>
-      <li><strong>Tiret em (—)</strong> → remplacer par <code> : </code> dans les titres, <code>, </code> dans le corps</li>
-      <li><strong>"c'est ces / c'est des / c'est les"</strong> → toujours "ce sont" si pluriel</li>
-      <li><strong>Punchlines IA</strong> du type "Ce n'est pas plus compliqué que ça."</li>
-      <li><strong>Tricolons répétés</strong> : les listes de 3 éléments en cascade à chaque section</li>
-      <li><strong>Structure trop régulière</strong> : même schéma section après section</li>
-      <li><strong>Ouverture avant/après éculée</strong> (personnage → problème → reformule → résultat parfait)</li>
-      <li><strong>Gras systématique sur les mots-clés</strong> (<code>**mot**</code> dans le corps du texte)</li>
-      <li><strong>Emojis dans les titres/sous-titres</strong> (🚀, 🔍, ✅...)</li>
-    </ul>
-    <h4>Formules d'ouverture et de fermeture interdites</h4>
-    <ul>
-      <li>"Certainement", "Bien sûr", "Absolument"</li>
-      <li>"En résumé", "En conclusion", "Pour conclure"</li>
-      <li>"Voici un aperçu", "Voici une vue d'ensemble"</li>
-      <li>"J'espère que cela vous aide"</li>
-      <li>"Il est important de noter que"</li>
-    </ul>
-  </div>
-
-  <div class="block red">
-    <h3>Bloc 4 — Mots à éviter (marqueurs IA fréquents)</h3>
-    <p>Ces mots apparaissent massivement dans les sorties non retravaillées de tous les LLM. Les éviter en génération, pas seulement à la correction.</p>
+    <h3>Mots à bannir</h3>
     <div class="word-cloud">
       <span class="pill">révolutionnaire</span><span class="pill">disruptif</span><span class="pill">innovant</span><span class="pill">puissant</span><span class="pill">incroyable</span><span class="pill">exceptionnel</span><span class="pill">remarquable</span><span class="pill">transformationnel</span><span class="pill">changer la donne</span><span class="pill">dans un monde où</span><span class="pill">à l'ère de</span><span class="pill">exploiter</span><span class="pill">tirer parti</span><span class="pill">naviguer</span><span class="pill">paysage</span><span class="pill">univers</span><span class="pill">fondamental</span><span class="pill">essentiel</span><span class="pill">crucial</span><span class="pill">clé</span><span class="pill">incontournable</span><span class="pill">booster</span><span class="pill">accélérer</span><span class="pill">optimiser</span><span class="pill">synergie</span><span class="pill">visionnaire</span><span class="pill">inspirant</span><span class="pill">passionnant</span><span class="pill">dynamique</span><span class="pill">évolutif</span><span class="pill">simplement</span><span class="pill">littéralement</span><span class="pill">certainement</span><span class="pill">probablement</span><span class="pill">globalement</span><span class="pill">approfondir</span><span class="pill">explorer</span><span class="pill">révéler</span><span class="pill">débloquer</span><span class="pill">exposer</span>
     </div>
   </div>
-</section>
-
-<!-- NATURALISATION V2 -->
-<section class="section" id="naturalisation">
-  <div class="section-label">
-    <span class="section-num">III</span>
-    <h2 class="section-title">Méthodologie de naturalisation v2</h2>
-    <span class="section-tag">Pour les révisions post-génération</span>
-  </div>
-  <p class="section-intro">Ce bloc s'applique à chaque révision de chapitre. Il vient compléter les règles de génération pour les cas où le texte a déjà été produit.</p>
 
   <div class="block accent">
-    <h3>1. Anglicismes : garder + traduire entre parenthèses</h3>
-    <p>Garder le terme anglais (vocabulaire professionnel reconnu), ajouter la traduction française entre parenthèses à la <strong>première occurrence seulement</strong> dans chaque chapitre.</p>
+    <h3>Mots fréquents : synonymes à varier</h3>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Terme anglais</th><th>Traduction à ajouter</th></tr></thead>
+        <thead><tr><th>Mot IA fréquent</th><th>Alternatives naturelles</th></tr></thead>
         <tbody>
-          <tr><td>few-shot prompting</td><td>apprentissage par l'exemple</td></tr>
-          <tr><td>Chain-of-Thought</td><td>raisonnement enchaîné</td></tr>
-          <tr><td>pattern</td><td>schéma récurrent</td></tr>
-          <tr><td>templates</td><td>gabarits réutilisables</td></tr>
-          <tr><td>RAG</td><td>récupération augmentée d'informations</td></tr>
-          <tr><td>workflows</td><td>flux de travail</td></tr>
-          <tr><td>KPIs</td><td>indicateurs clés de performance</td></tr>
-          <tr><td>boilerplates</td><td>structures de code génériques</td></tr>
-          <tr><td>brainstorming</td><td>remue-méninges</td></tr>
-          <tr><td>benchmarks</td><td>tests de référence</td></tr>
-          <tr><td>context engineering</td><td>ingénierie du contexte</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p><em>Exception :</em> ne pas traduire les termes déjà expliqués dans le corps du texte, ni ceux choisis intentionnellement en anglais (ex : "prompt", "prompt engineering").</p>
-  </div>
-
-  <div class="block accent">
-    <h3>2. Marqueurs lexicaux IA à remplacer systématiquement</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Marqueur IA</th><th>Remplacement</th></tr></thead>
-        <tbody>
-          <tr><td><code>challengent</code></td><td>bousculent</td></tr>
-          <tr><td><code>honnêtement</code>, <code>franchement</code></td><td>reformuler (supprimer ou trouver une formulation plus précise)</td></tr>
-          <tr><td><code>il est important de noter</code></td><td>supprimer ou reformuler en intégrant directement l'info</td></tr>
-          <tr><td><code>en conclusion</code></td><td>supprimer ou reformuler (au final, pour résumer, en somme)</td></tr>
-          <tr><td><code>D'un côté... De l'autre côté...</code></td><td>varier la structure, éviter la symétrie trop propre</td></tr>
+          <tr><td>important</td><td>majeur, central, déterminant, capital, primordial</td></tr>
+          <tr><td>utiliser</td><td>mettre en oeuvre, appliquer, recourir à, employer, se servir de</td></tr>
+          <tr><td>permettre</td><td>rendre possible, ouvrir la voie à, donner accès à, autoriser</td></tr>
+          <tr><td>mettre en place</td><td>déployer, lancer, instaurer, installer, démarrer</td></tr>
+          <tr><td>faire</td><td>réaliser, accomplir, effectuer, mener à bien, produire</td></tr>
+          <tr><td>très</td><td>particulièrement, diablement, extrêmement, vachement (familier)</td></tr>
+          <tr><td>beaucoup</td><td>énormément, un max, à foison, abondamment</td></tr>
+          <tr><td>dire</td><td>expliquer, mentionner, indiquer, souligner, préciser, déclarer</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
   <div class="block accent">
-    <h3>3. Enrichissement conceptuel (contenu non-inventé)</h3>
-    <p>Intégrer quand pertinent des résultats issus de recherches récentes :</p>
+    <h3>Connecteurs logiques : varier systématiquement</h3>
+    <p>Un LLM utilise par défaut les mêmes connecteurs à chaque phrase. La répétition est le marqueur, pas le connecteur lui-même.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Connecteur IA</th><th>Alternatives</th></tr></thead>
+        <tbody>
+          <tr><td>Et</td><td>ainsi que, de plus, par ailleurs, en outre, sans compter que</td></tr>
+          <tr><td>Mais</td><td>cependant, en revanche, toutefois, néanmoins, pourtant</td></tr>
+          <tr><td>Parce que</td><td>car, du fait que, étant donné que, vu que, puisque</td></tr>
+          <tr><td>Donc</td><td>par conséquent, ainsi, de ce fait, en conséquence, dès lors</td></tr>
+          <tr><td>Alors</td><td>dans ce cas, ainsi, par suite, de sorte que</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block accent">
+    <h3>Formules d'ouverture et de fermeture interdites</h3>
+    <p>Ces formules apparaissent dans les sorties non retravaillées de tous les modèles, avec une constance qui les rend immédiatement identifiables.</p>
+    <h4>Ouvertures IA</h4>
     <ul>
-      <li><strong>Glissement rhétorique :</strong> l'IA déplace progressivement le cadre de la demande sans inventer de faits. Signe : conclusion légèrement décalée par rapport à la question de départ.</li>
-      <li><strong>Dérive attentionnelle :</strong> après ~15 échanges, les instructions du début s'érodent. Solution : réinjecter les contraintes ou ouvrir un nouveau fil.</li>
-      <li><strong>Lost in the Middle (Stanford 2023) :</strong> les modèles retiennent bien début et fin d'un contexte long, oublient le milieu. Placer les instructions critiques en tête ou en fin.</li>
-      <li><strong>Chiffres vérifiables :</strong> l'instruction d'incertitude réduit les hallucinations de 53 % à 23 % sur GPT-4o. L'auto-vérification réduit les erreurs de 25-30 %.</li>
+      <li>"Certainement !", "Bien sûr !", "Absolument !"</li>
+      <li>"Voici un aperçu de...", "Voici une vue d'ensemble de..."</li>
+      <li>"Je serais ravi de vous aider..."</li>
+      <li>ChatGPT : "Certainly!", "Sure!", "Of course!"</li>
+      <li>DeepSeek : "Below is...", "Here's a breakdown of..."</li>
     </ul>
-  </div>
-
-  <div class="block green">
-    <h3>4. Les analogies personnelles : ne jamais supprimer</h3>
-    <p>Les analogies tirées du vécu (sport, travail, vie quotidienne) humanisent le texte. Si une phrase contient une analogie personnelle incomplète, la compléter dans le même registre sans "améliorer" le style de l'auteur.</p>
+    <h4>Fermetures IA</h4>
+    <ul>
+      <li>"En résumé", "En conclusion", "Pour conclure"</li>
+      <li>"J'espère que cela vous aide"</li>
+      <li>"Il est important de noter que..."</li>
+      <li>"N'hésitez pas à me contacter si vous avez des questions"</li>
+    </ul>
     <div class="example-box">
       <div class="example-col bad">
-        <span class="example-label">IA, réécrit sans analogie</span>
-        La patience est essentielle dans ce processus. Prendre le temps d'itérer permet d'obtenir de meilleurs résultats.
+        <span class="example-label">IA, brut</span>
+        En résumé, le marketing digital est crucial pour les entreprises modernes. N'hésitez pas à appliquer ces conseils.
       </div>
       <div class="example-col good">
-        <span class="example-label">Humain, analogie conservée</span>
-        C'est comme les premières semaines de running : tu veux aller vite, mais c'est l'endurance qu'il faut construire d'abord. Le prompt, c'est pareil.
-      </div>
-    </div>
-  </div>
-
-  <div class="block green">
-    <h3>5. Expliquer le POURQUOI dans les instructions au modèle</h3>
-    <p>Les instructions avec justification produisent des résultats plus robustes. Cette règle s'applique aussi bien aux prompts qu'aux consignes dans un chapitre.</p>
-    <div class="example-box">
-      <div class="example-col bad">
-        <span class="example-label">Sans justification</span>
-        Ne jamais utiliser de tirets longs.
-      </div>
-      <div class="example-col good">
-        <span class="example-label">Avec justification</span>
-        Ne jamais utiliser de tirets longs, car ils sont le marqueur IA numéro 1 en français et trahissent immédiatement une génération automatique aux lecteurs avertis.
+        <span class="example-label">Humain, corrigé</span>
+        Le marketing digital, c'est pas une option. Les entreprises qui l'ignorent le paient cash.
       </div>
     </div>
   </div>
 </section>
 
-<!-- AGENT 2 : ÉVALUATION -->
-<section class="section" id="agent-review">
+<!-- AXE 4 -->
+<section class="section" id="structure">
   <div class="section-label">
     <span class="section-num">IV</span>
-    <h2 class="section-title">Grille d'évaluation de l'Agent Évaluateur</h2>
-    <span class="section-tag">Score sur 70 · Décision finale</span>
+    <h2 class="section-title">Marqueurs structurels</h2>
+    <span class="section-tag">Priorité 3</span>
   </div>
-  <p class="section-intro">7 critères, chacun noté sur 10. Le seuil de validation est 55/70. En dessous de 45, le chapitre repart en régénération.</p>
+  <p class="section-intro">Un texte trop "bien rangé" ne peut pas venir d'un humain. Ces marqueurs ne concernent pas les mots mais la façon dont le texte est organisé et mis en forme.</p>
 
-  <div class="score-grid">
-    <div class="score-card"><div class="score-num">/10</div><div class="score-label"><strong>Hook</strong> — La première phrase accroche-t-elle ? Est-ce original ?</div></div>
-    <div class="score-card"><div class="score-num">/10</div><div class="score-label"><strong>Ratio 70/30</strong> — 70 % pédagogie, 30 % narratif/humain</div></div>
-    <div class="score-card"><div class="score-num">/10</div><div class="score-label"><strong>Voix humaine</strong> — Sonne-t-il comme quelqu'un qui parle à un ami ?</div></div>
-    <div class="score-card"><div class="score-num">/10</div><div class="score-label"><strong>Zéro marqueurs IA</strong> — Absence de tirets em, mots bannis, formules types</div></div>
-    <div class="score-card"><div class="score-num">/10</div><div class="score-label"><strong>Grammaire FR</strong> — "ce sont" vs "c'est ces", accords, registre</div></div>
-    <div class="score-card"><div class="score-num">/10</div><div class="score-label"><strong>Promesses tenues</strong> — "on y reviendra" → vérifier que c'est fait</div></div>
-    <div class="score-card"><div class="score-num">/10</div><div class="score-label"><strong>Chiffres cohérents</strong> — "trois points" → vérifier qu'il y en a bien trois</div></div>
-  </div>
-
-  <div class="block green">
-    <h3>Détail du critère "Zéro marqueurs IA"</h3>
-    <p>C'est le critère le plus dense. Vérifier l'absence de :</p>
+  <div class="block accent">
+    <h3>Mise en forme excessive</h3>
     <ul>
-      <li>Tirets em (—) et demi-cadratins (–)</li>
-      <li>Structures symétriques trop propres ("D'un côté... De l'autre côté...")</li>
-      <li>Mots interdits : révolutionnaire, disruptif, innovant, puissant, crucial, fondamental, essentiel, incontournable, optimiser, synergie, visionnaire, dynamique, évolutif, exploiter, tirer parti</li>
-      <li>Formules d'ouverture : "Certainement", "Bien sûr", "Voici un aperçu", "Voici une vue d'ensemble"</li>
-      <li>Formules de fermeture : "En résumé", "En conclusion", "Pour conclure", "J'espère que cela vous aide"</li>
-      <li>Gras systématique sur les mots-clés dans le corps du texte</li>
-      <li>Emojis dans les titres et sous-titres</li>
-      <li>Paragraphes tous de même longueur</li>
-      <li>Transitions trop propres et trop régulières entre chaque section</li>
+      <li><strong>Gras systématique sur les mots-clés</strong> (<code>**mot**</code>) — les LLM balisent tout ce qu'ils jugent important. Un humain met le gras avec parcimonie.</li>
+      <li><strong>Emojis dans les titres</strong> (<code>🚀 Pourquoi c'est important</code>, <code>🔍 Astuce n°1</code>) — signal quasi-universel de contenu automatisé.</li>
+      <li><strong>Listes à puces pour tout</strong> — convertir en prose là où une phrase suffit.</li>
+      <li><strong>Headers Markdown sur chaque paragraphe</strong> (<code>##</code>, <code>###</code>) — un humain structure moins mécaniquement.</li>
     </ul>
-  </div>
-</section>
-
-<!-- AGENT 3 : NETTOYAGE UNICODE + STRUCTUREL -->
-<section class="section" id="agent-check">
-  <div class="section-label">
-    <span class="section-num">V</span>
-    <h2 class="section-title">Nettoyage de l'Agent Vérificateur</h2>
-    <span class="section-tag">Unicode · Structurel · Pré-export</span>
-  </div>
-  <p class="section-intro">Deux types d'interventions : les corrections automatiques (il les fait sans demander) et les signalements (il alerte mais ne modifie pas).</p>
-
-  <div class="block gold">
-    <h3>Corrections automatiques</h3>
-    <h4>1. Tirets em dans tout le document</h4>
+    <h4>Spécificités par modèle</h4>
     <ul>
-      <li>Dans les titres/sous-titres → <code> : </code></li>
-      <li>Dans le corps du texte → <code>, </code></li>
+      <li><strong>ChatGPT :</strong> bullet points structurés, sous-titres, emphase en gras partout</li>
+      <li><strong>Claude :</strong> plus sobre, mais formatage régulier qui peut sonner IA</li>
+      <li><strong>Gemini :</strong> plus d'italiques que les autres</li>
+      <li><strong>DeepSeek :</strong> "Voici une vue d'ensemble" et listes à puces systématiques</li>
     </ul>
-    <h4>2. Caractères Unicode invisibles</h4>
-    <p>Tous les LLM injectent des caractères cachés. Inoffensifs visuellement, détectables au byte par les outils anti-IA modernes.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Caractère</th><th>Unicode</th><th>Action</th></tr></thead>
-        <tbody>
-          <tr><td>Espace insécable</td><td><code>U+00A0</code></td><td>Remplacer par espace normale</td></tr>
-          <tr><td>Espace fine insécable (GPT-5)</td><td><code>U+202F</code></td><td>Remplacer par espace normale</td></tr>
-          <tr><td>Espace fine</td><td><code>U+2009</code></td><td>Remplacer par espace normale</td></tr>
-          <tr><td>Espace cadratin</td><td><code>U+2003</code></td><td>Remplacer par espace normale</td></tr>
-          <tr><td>Zero-Width Space</td><td><code>U+200B</code></td><td>Supprimer</td></tr>
-          <tr><td>Zero-Width Joiner</td><td><code>U+200D</code></td><td>Supprimer</td></tr>
-          <tr><td>Zero-Width Non-Joiner</td><td><code>U+200C</code></td><td>Supprimer</td></tr>
-          <tr><td>Word Joiner</td><td><code>U+2060</code></td><td>Supprimer</td></tr>
-          <tr><td>Soft Hyphen</td><td><code>U+00AD</code></td><td>Supprimer</td></tr>
-          <tr><td>Byte Order Mark</td><td><code>U+FEFF</code></td><td>Supprimer</td></tr>
-        </tbody>
-      </table>
+    <div class="example-box">
+      <div class="example-col bad">
+        <span class="example-label">IA, brut</span>
+        <strong>Points clés :</strong><br>- Point 1<br>- Point 2<br>- Point 3
+      </div>
+      <div class="example-col good">
+        <span class="example-label">Humain, prose</span>
+        D'abord [point 1]. Ensuite [point 2]. Et enfin [point 3].
+      </div>
     </div>
   </div>
 
-  <div class="block gold">
-    <h3>Signalements (sans correction automatique)</h3>
+  <div class="block accent">
+    <h3>Rythme trop régulier</h3>
+    <p>Les LLM génèrent des phrases de longueur similaire avec une structure sujet-verbe-complément répétée. Ces régularités sont mesurables par les détecteurs (perplexité, burstiness).</p>
     <ul>
-      <li>Gras systématique sur les mots-clés dans le corps du texte</li>
-      <li>Emojis dans les titres (<code>## 🚀 Titre</code>)</li>
-      <li>Formules d'ouverture IA détectées</li>
-      <li>Formules de fermeture IA détectées</li>
-      <li>Incohérences de chiffres (annonce "3 points", en développe 4)</li>
-      <li>Promesses au lecteur sans suite ("on y reviendra", "garde cette liste")</li>
+      <li><strong>Paragraphes tous de même longueur</strong> — alterner courts et longs</li>
+      <li><strong>Tricolons répétés</strong> — listes de 3 éléments à chaque section</li>
+      <li><strong>Structures symétriques</strong> — "D'un côté... De l'autre côté..." répété</li>
+      <li><strong>Transitions mécaniques</strong> — "Maintenant que nous avons vu X, passons à Y"</li>
     </ul>
+    <div class="callout">
+      <div class="callout-label">Ce que mesurent les détecteurs modernes</div>
+      <p><strong>Perplexité :</strong> un texte humain est moins prévisible. <strong>Burstiness :</strong> un humain alterne phrases très courtes et très longues, un LLM produit une longueur moyenne constante. Ces deux métriques comptent plus que les marqueurs typographiques pour les outils comme GPTZero ou Originality.ai.</p>
+    </div>
   </div>
 
-  <div class="block gold">
-    <h3>Regex JavaScript prête à l'emploi (Make / n8n)</h3>
-    <p>À brancher dans un node "Code" dans Make ou n8n pour nettoyer automatiquement toute sortie LLM.</p>
-<pre class="code-block"><span class="keyword">function</span> humanize(text, options = {}) {
-  <span class="keyword">const</span> {
-    keepFrenchQuotes = <span class="keyword">false</span>,    <span class="comment">// garder « » en contexte éditorial pro</span>
-    removeSpaceBeforePunct = <span class="keyword">true</span>  <span class="comment">// supprimer espace avant : ; ! ?</span>
-  } = options;
-
-  <span class="keyword">let</span> cleaned = text
-    <span class="comment">// Tirets cadratins et demi-cadratins</span>
-    .replace(/[—–]/g, <span class="string">','</span>)
-    .replace(/‑/g, <span class="string">'-'</span>)
-    <span class="comment">// Guillemets et apostrophes courbes</span>
-    .replace(/[""„]/g, <span class="string">'"'</span>)
-    .replace(/['']/g, <span class="string">"'"</span>)
-    <span class="comment">// Ponctuation typographique</span>
-    .replace(/…/g, <span class="string">'...'</span>)
-    .replace(/[•·]/g, <span class="string">'-'</span>)
-    <span class="comment">// Espaces problématiques (U+00A0, U+202F, U+2009, U+2002, U+2003)</span>
-    .replace(/[     ]/g, <span class="string">' '</span>)
-    <span class="comment">// Caractères zero-width et invisibles</span>
-    .replace(/[​‌‍⁠﻿­]/g, <span class="string">''</span>)
-    .replace(/[‎‏]/g, <span class="string">''</span>)
-    <span class="comment">// Espaces multiples</span>
-    .replace(/\s{2,}/g, <span class="string">' '</span>)
-    .trim();
-
-  <span class="keyword">if</span> (!keepFrenchQuotes) {
-    cleaned = cleaned.replace(/[«»]/g, <span class="string">'"'</span>);
-  }
-  <span class="keyword">if</span> (removeSpaceBeforePunct) {
-    cleaned = cleaned.replace(/\s+([:;!?])/g, <span class="string">'$1'</span>);
-  }
-
-  <span class="keyword">return</span> cleaned;
-}
-
-<span class="comment">// Usage Make/n8n :</span>
-<span class="comment">// humanize($json.text, { keepFrenchQuotes: false, removeSpaceBeforePunct: true })</span></pre>
+  <div class="block accent">
+    <h3>Erreurs grammaticales caractéristiques</h3>
+    <p>Les LLM appliquent les règles grammaticales par probabilité. Certaines erreurs reviennent de façon systématique en français.</p>
+    <ul>
+      <li><strong>"c'est ces / c'est des / c'est les"</strong> devant un pluriel → toujours "ce sont". <em>Exemple : "Ce sont ces dix minutes-là" et non "c'est ces dix minutes-là".</em></li>
+      <li><strong>Accord des anglicismes</strong> — hésitations sur le genre et le nombre des termes techniques empruntés à l'anglais</li>
+    </ul>
   </div>
 </section>
 
-<!-- CHECKLIST COMPLÈTE -->
-<section class="section" id="checklist">
+<!-- CHECKLIST + REGEX -->
+<section class="section" id="pratique">
   <div class="section-label">
-    <span class="section-num">VI</span>
-    <h2 class="section-title">Checklist complète en 22 points</h2>
-    <span class="section-tag">À passer avant tout export</span>
+    <span class="section-num">V</span>
+    <h2 class="section-title">Checklist et automation</h2>
+    <span class="section-tag">22 points · Regex JS</span>
   </div>
-  <p class="section-intro">Organisée en 3 niveaux d'effort croissant. Les niveaux 1 et 2 sont mécaniques (regex ou lecture rapide). Le niveau 3 demande une relecture attentive.</p>
+  <p class="section-intro">Trois niveaux d'effort croissant. Les niveaux 1 et 2 sont automatisables via regex. Le niveau 3 demande une relecture humaine.</p>
 
   <div class="checklist">
-    <div class="checklist-title">Niveau 1 — Nettoyage typographique (mécanique, regex possible)</div>
+    <div class="checklist-title">Niveau 1 — Typographie et Unicode (automatique)</div>
     <ol>
-      <li><strong>Tirets cadratins/demi-cadratins</strong> remplacés par virgule, deux-points ou point</li>
-      <li><strong>Guillemets courbes</strong> remplacés par guillemets droits (sauf édition pro FR)</li>
+      <li><strong>Tirets cadratins et demi-cadratins</strong> remplacés par virgule ou point</li>
+      <li><strong>Guillemets courbes</strong> remplacés par guillemets droits</li>
       <li><strong>Apostrophes courbes</strong> remplacées par apostrophes droites</li>
       <li><strong>Points de suspension</strong> … remplacés par trois points ...</li>
       <li><strong>Espaces insécables (U+00A0)</strong> remplacées par espaces normales</li>
@@ -509,9 +434,9 @@ header,.section,.pullquote{animation:fade-up .5s ease-out backwards}
   </div>
 
   <div class="checklist">
-    <div class="checklist-title">Niveau 2 — Nettoyage structurel (lecture rapide)</div>
+    <div class="checklist-title">Niveau 2 — Structure (lecture rapide)</div>
     <ol>
-      <li><strong>Gras sur mots-clés</strong> dans le corps du texte retiré</li>
+      <li><strong>Gras systématique sur mots-clés</strong> dans le corps du texte retiré</li>
       <li><strong>Emojis dans les titres</strong> supprimés</li>
       <li><strong>Formules d'ouverture IA</strong> supprimées (Certainement, Bien sûr, Voici un aperçu...)</li>
       <li><strong>Formules de fermeture IA</strong> supprimées (En résumé, En conclusion, Pour conclure...)</li>
@@ -520,39 +445,76 @@ header,.section,.pullquote{animation:fade-up .5s ease-out backwards}
   </div>
 
   <div class="checklist">
-    <div class="checklist-title">Niveau 3 — Humanisation éditoriale (relecture attentive)</div>
+    <div class="checklist-title">Niveau 3 — Sémantique (relecture humaine)</div>
     <ol>
-      <li><strong>Mots interdits</strong> absents (révolutionnaire, crucial, optimiser, synergie...)</li>
-      <li><strong>Connecteurs logiques</strong> variés (pas "et... et... et..." ni "mais... mais...")</li>
-      <li><strong>Longueur des phrases</strong> variée, alternance court/long</li>
-      <li><strong>Au moins une incise</strong> ou parenthèse dans le texte</li>
-      <li><strong>Voix humaine présente</strong> : touches personnelles, tutoiement, légèreté</li>
-      <li><strong>Chiffres annoncés = chiffres développés</strong> (vérification manuelle)</li>
-      <li><strong>Promesses au lecteur</strong> honorées dans les chapitres suivants</li>
-      <li><strong>Score global ≥ 55/70</strong> (évaluation Agent 2)</li>
+      <li><strong>Mots interdits absents</strong> (révolutionnaire, crucial, optimiser, synergie...)</li>
+      <li><strong>Connecteurs logiques variés</strong> (pas "et... et... et..." ni "mais... mais...")</li>
+      <li><strong>Longueur des phrases variée</strong> — alternance court/long présente</li>
+      <li><strong>Aucune structure symétrique répétée</strong> (D'un côté... De l'autre côté...)</li>
+      <li><strong>Transitions organiques</strong> — pas "Maintenant que nous avons vu X..."</li>
+      <li><strong>Chiffres annoncés = chiffres développés</strong> ("trois points" → vérifier qu'il y en a bien trois)</li>
+      <li><strong>Voix et subjectivité présentes</strong> — le texte a une opinion, pas juste de l'information</li>
+      <li><strong>Paragraphes de longueurs variées</strong> — aucune régularité mécanique</li>
     </ol>
   </div>
 
-  <div class="callout">
+  <div class="callout" style="margin:8px 0 24px">
     <div class="callout-label">Règle de dosage</div>
-    <p><strong>Modifier 30-50 % du texte, pas 100 %.</strong> Une humanisation excessive (trop d'élisions, trop d'expressions idiomatiques, trop de "perso franchement") est elle-même un tell. L'objectif n'est pas de singer le style humain à outrance, c'est de retirer ce qui signe l'IA.</p>
+    <p><strong>Modifier 30-50 % du texte, pas 100 %.</strong> Une humanisation excessive est elle-même un tell. L'objectif : retirer ce qui signe l'IA, pas singer le style humain à outrance.</p>
+  </div>
+
+  <div class="block gold">
+    <h3>Regex JavaScript — nettoyage automatique niveau 1</h3>
+    <p>À brancher dans un node "Code" dans Make ou n8n.</p>
+<pre class="code-block"><span class="keyword">function</span> cleanAI(text, options = {}) {
+  <span class="keyword">const</span> {
+    keepFrenchQuotes = <span class="keyword">false</span>,     <span class="comment">// garder « » en contexte éditorial pro</span>
+    removeSpaceBeforePunct = <span class="keyword">true</span>  <span class="comment">// supprimer espace avant : ; ! ?</span>
+  } = options;
+
+  <span class="keyword">let</span> out = text
+    <span class="comment">// Tirets</span>
+    .replace(/[—–]/g, <span class="string">','</span>)
+    .replace(/‑/g, <span class="string">'-'</span>)
+    <span class="comment">// Guillemets et apostrophes courbes</span>
+    .replace(/[""„]/g, <span class="string">'"'</span>)
+    .replace(/['']/g, <span class="string">"'"</span>)
+    <span class="comment">// Ponctuation typographique</span>
+    .replace(/…/g, <span class="string">'...'</span>)
+    .replace(/[•·]/g, <span class="string">'-'</span>)
+    <span class="comment">// Espaces Unicode (U+00A0, U+202F, U+2009, U+2002, U+2003)</span>
+    .replace(/[     ]/g, <span class="string">' '</span>)
+    <span class="comment">// Zero-width et invisibles</span>
+    .replace(/[​‌‍⁠﻿­‎‏]/g, <span class="string">''</span>)
+    <span class="comment">// Espaces multiples</span>
+    .replace(/\s{2,}/g, <span class="string">' '</span>)
+    .trim();
+
+  <span class="keyword">if</span> (!keepFrenchQuotes)
+    out = out.replace(/[«»]/g, <span class="string">'"'</span>);
+
+  <span class="keyword">if</span> (removeSpaceBeforePunct)
+    out = out.replace(/\s+([:;!?])/g, <span class="string">'$1'</span>);
+
+  <span class="keyword">return</span> out;
+}
+
+<span class="comment">// Usage Make / n8n :</span>
+<span class="comment">// cleanAI($json.text)</span>
+<span class="comment">// cleanAI($json.text, { keepFrenchQuotes: true, removeSpaceBeforePunct: false })</span></pre>
   </div>
 </section>
 
-<!-- PULL QUOTE -->
 <div class="pullquote">
-  <blockquote>Humaniser un texte IA, ce n'est pas cacher son origine. <em>C'est lui redonner ce que la machine lui a pris</em> : un rythme, une voix, une opinion.</blockquote>
+  <blockquote>Nettoyer la typographie, c'est 30 % du travail. <em>L'autre 70 % est dans la voix, le rythme et l'opinion.</em> Aucune regex ne peut remplacer ça.</blockquote>
   <cite>Mathieu Giroux · Pipeline anti-marqueurs IA · mai 2026</cite>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <strong>À propos.</strong> Ce guide compile les règles que j'ai construites pour ma pipeline de création de livres assistée par IA (BookFactory). Je publie sur Amazon KDP des livres sur l'intelligence artificielle, et ce système me permet de produire du contenu qui ne trahit pas son origine.
+  <strong>À propos.</strong> Ce guide compile les règles de marqueurs IA intégrées dans ma pipeline de création de livres assistée par IA (BookFactory). Je publie sur Amazon KDP des livres sur l'intelligence artificielle.
   <br><br>
-  <strong>Ce qui manque ici.</strong> Les fichiers de config du vault (style ADN, série de livres), les prompts complets des agents, et les scripts Python de l'export KDP. Ce guide couvre uniquement la couche anti-marqueurs. Si tu veux le reste, demande-moi.
-  <br><br>
-  <strong>Sources ayant contribué.</strong> Originality.ai, HumanWrites, Purifai, OpenAI Community (rapport U+202F GPT-5), Inria (Arxiv 2306.05871), guide Hél'IA par Romain Hélias.
-  <div class="foot-sig">Mathieu Giroux · m.giroux@capemploi16.com · Pipeline anti-marqueurs IA v1 · mai 2026</div>
+  <strong>Sources.</strong> Originality.ai, HumanWrites, Purifai, OpenAI Community (rapport U+202F GPT-5), Inria (Arxiv 2306.05871), guide Hél'IA par Romain Hélias.
+  <div class="foot-sig">Mathieu Giroux · m.giroux@capemploi16.com · mathieugiroux.fr · Pipeline anti-marqueurs IA v2 · mai 2026</div>
 </footer>
 
 </div>
