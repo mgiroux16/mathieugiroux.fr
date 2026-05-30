@@ -232,6 +232,7 @@
       transition: transform 0.3s ease;
     }
     .serie-item:hover img { transform: translateY(-4px); }
+    .serie-item.active:hover img { transform: translateY(-8px) scale(1.07); box-shadow: 0 16px 40px rgba(0,0,0,0.6); }
     .serie-item span { font-size: 0.7rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; }
     .serie-item.active span { color: rgba(255,255,255,0.7); }
 
@@ -415,20 +416,22 @@
   <!-- HERO -->
   <section id="hero">
     <div class="container">
-      <span class="hero-eyebrow fade-in">Livre 1 — Série IA pour Tous · Par Mathieu Giroux</span>
-      <h1 class="hero-title fade-in">
+      <span id="hero-eyebrow" class="hero-eyebrow fade-in">Livre 1 — Série IA pour Tous · Par Mathieu Giroux</span>
+      <h1 id="hero-title" class="hero-title fade-in">
         Dis-moi<br/>si ça te<br/><em>ressemble.</em>
       </h1>
-      <p class="hero-sub fade-in">
+      <p id="hero-sub" class="hero-sub fade-in">
         Tu as essayé l'IA. Tu as obtenu "mouais". Et tu es passé à autre chose.<br/>
         Ce livre, c'est la formation qui aurait dû exister dès le départ.
       </p>
       <div class="hero-ctas fade-in">
         <a href="#chapitres-gratuits" class="btn-dark">Guide gratuit</a>
-        <a href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener" class="btn-light">Acheter sur Amazon — 6,99 €</a>
+        <a id="hero-cta-amazon" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener" class="btn-light">Acheter sur Amazon — 6,99 €</a>
       </div>
-      <img src="public/L1.png" alt="IA pour Tous — Comprendre l'IA facilement" class="hero-book fade-in" />
-      <p class="hero-meta fade-in">110 pages · Kindle & Broché · Publié le 13 avril 2026</p>
+      <a id="hero-book-link" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">
+        <img id="hero-book-img" src="public/L1.png" alt="IA pour Tous — Comprendre l'IA facilement" class="hero-book fade-in" style="transition: opacity 0.6s ease, transform 0.4s ease;" />
+      </a>
+      <p id="hero-meta" class="hero-meta fade-in">110 pages · Kindle &amp; Broché · Publié le 13 avril 2026</p>
     </div>
   </section>
 
@@ -611,6 +614,47 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Slider hero L1 / L2
+    const heroBooks = [
+      {
+        eyebrow: 'Livre 1 — Série IA pour Tous · Par Mathieu Giroux',
+        title: 'Dis-moi<br/>si ça te<br/><em>ressemble.</em>',
+        sub: 'Tu as essayé l\'IA. Tu as obtenu "mouais". Et tu es passé à autre chose.<br/>Ce livre, c\'est la formation qui aurait dû exister dès le départ.',
+        amazon: 'https://www.amazon.fr/dp/B0GX2Y21Y3',
+        img: 'public/L1.png',
+        alt: 'Livre 1 — Comprendre l\'IA facilement',
+        meta: '110 pages · Kindle & Broché · Publié le 13 avril 2026'
+      },
+      {
+        eyebrow: 'Livre 2 — Série IA pour Tous · Par Mathieu Giroux',
+        title: 'Prompter<br/>comme<br/><em>un pro.</em>',
+        sub: 'Tu obtiens des réponses correctes. Mais rarement exactement ce que tu voulais.<br/>Ce livre change la façon dont tu formules chaque demande.',
+        amazon: 'https://www.amazon.fr/dp/B0H353RTPC',
+        img: 'public/L2.png',
+        alt: 'Livre 2 — Prompter comme un pro',
+        meta: 'Kindle & Broché · Disponible maintenant'
+      }
+    ];
+    let heroIndex = 0;
+    function switchHero() {
+      heroIndex = (heroIndex + 1) % heroBooks.length;
+      const b = heroBooks[heroIndex];
+      const img = document.getElementById('hero-book-img');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('hero-eyebrow').textContent = b.eyebrow;
+        document.getElementById('hero-title').innerHTML = b.title;
+        document.getElementById('hero-sub').innerHTML = b.sub;
+        document.getElementById('hero-cta-amazon').href = b.amazon;
+        document.getElementById('hero-book-link').href = b.amazon;
+        img.src = b.img;
+        img.alt = b.alt;
+        document.getElementById('hero-meta').textContent = b.meta;
+        img.style.opacity = '1';
+      }, 600);
+    }
+    setInterval(switchHero, 5000);
 
     // Beehiiv
     const BEEHIIV_PUBLICATION_ID = '499efb96-8401-45e6-8dad-b8a09e56291c';
