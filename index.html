@@ -400,7 +400,7 @@
     <span>Mode édition — clique sur n'importe quel texte pour modifier</span>
     <div class="edit-btns">
       <button class="btn-cancel" onclick="cancelEdit()">Annuler</button>
-      <button class="btn-save" onclick="saveEdit()">Télécharger</button>
+      <button class="btn-save" onclick="saveEdit()" id="btn-save-label">Sauvegarder</button>
     </div>
   </div>
   <button id="edit-toggle" onclick="toggleEdit()">✏ Modifier</button>
@@ -441,7 +441,8 @@
       <p class="pull-quote fade-in">
         "Plusieurs milliards de personnes utilisent l'IA quotidiennement.<br/>
         <span>Seule une minorité sait vraiment l'utiliser.</span><br/>
-        Pas parce qu'elles manquent d'intelligence."
+        Pas parce qu'elles manquent d'intelligence,<br/>
+        mais parce qu'elles n'ont pas été formées."
       </p>
     </div>
   </section>
@@ -684,10 +685,25 @@
       // Beehiiv à connecter quand la publication sera configurée
     });
 
-    // Mode édition
+    // Mode édition — accès protégé par mot de passe
+    const EDIT_HASH = '612d67ba1d201c06a4fd17bb7e88efb0331e66540322096296a1dfac73914fca';
     let editMode = false;
+    let editAuth = false;
     const SEL = 'h1, h2, h3, p:not(#form-success):not(#form-error), li';
-    function toggleEdit() {
+
+    async function hashStr(str) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    async function toggleEdit() {
+      if (!editAuth) {
+        const pwd = prompt('Mot de passe :');
+        if (!pwd) return;
+        const h = await hashStr(pwd);
+        if (h !== EDIT_HASH) { alert('Mot de passe incorrect.'); return; }
+        editAuth = true;
+      }
       editMode = true;
       document.querySelectorAll(SEL).forEach(el => {
         el.setAttribute('contenteditable', 'true');
@@ -697,6 +713,7 @@
       document.getElementById('edit-bar').style.display = 'flex';
       document.getElementById('edit-toggle').style.display = 'none';
     }
+
     function cancelEdit() {
       editMode = false;
       document.querySelectorAll(SEL).forEach(el => {
@@ -706,7 +723,11 @@
       document.getElementById('edit-bar').style.display = 'none';
       document.getElementById('edit-toggle').style.display = 'block';
     }
-    function saveEdit() {
+
+    async function saveEdit() {
+      const btn = document.getElementById('btn-save-label');
+      btn.textContent = 'Envoi...';
+      btn.disabled = true;
       document.querySelectorAll(SEL).forEach(el => {
         el.removeAttribute('contenteditable');
         el.style.outline = ''; el.style.borderRadius = '';
@@ -714,11 +735,24 @@
       document.getElementById('edit-bar').style.display = 'none';
       document.getElementById('edit-toggle').style.display = 'block';
       editMode = false;
-      const blob = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'index.html';
-      a.click();
+      const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      try {
+        const resp = await fetch('https://mg-n8n.fr/webhook/save-site', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ html: html, secret: 'Bookfactoryv5' })
+        });
+        const data = await resp.json();
+        if (data.success) {
+          alert('Site mis à jour. Propagation dans 1-2 min.');
+        } else {
+          alert('Erreur : ' + JSON.stringify(data));
+        }
+      } catch(e) {
+        alert('Erreur réseau : ' + e.message);
+      }
+      btn.textContent = 'Sauvegarder';
+      btn.disabled = false;
     }
   </script>
 
