@@ -687,7 +687,7 @@
 
     // Raccourci secret : Shift + Alt + E
     document.addEventListener('keydown', function(e) {
-      if (e.shiftKey && e.altKey && e.key === 'E') toggleEdit();
+      if (e.shiftKey && e.altKey && e.code === 'KeyE') toggleEdit();
     });
 
     // Mode édition — accès protégé par mot de passe
