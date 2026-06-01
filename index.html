@@ -403,7 +403,7 @@
       <button class="btn-save" onclick="saveEdit()" id="btn-save-label">Sauvegarder</button>
     </div>
   </div>
-  <button id="edit-toggle" onclick="toggleEdit()">✏ Modifier</button>
+  <button id="edit-toggle" style="display:none!important" onclick="toggleEdit()"></button>
 
   <!-- NAV -->
   <nav>
@@ -683,6 +683,11 @@
       a.click();
 
       // Beehiiv à connecter quand la publication sera configurée
+    });
+
+    // Raccourci secret : Shift + Alt + E
+    document.addEventListener('keydown', function(e) {
+      if (e.shiftKey && e.altKey && e.key === 'E') toggleEdit();
     });
 
     // Mode édition — accès protégé par mot de passe
