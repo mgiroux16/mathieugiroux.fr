@@ -110,11 +110,21 @@
     html { scroll-behavior: smooth; font-size: 16px; }
     body { background: var(--cream); color: var(--black); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.7; }
 
+    /* LIENS */
+    a { color: var(--black); }
+    a:hover { opacity: 0.65; }
+
     /* NAV */
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--light-grey); position: sticky; top: 0; background: var(--cream); z-index: 100; }
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; text-decoration: none; color: var(--black); }
     .nav-cta { background: var(--black); color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
     .nav-cta:hover { opacity: 0.85; }
+
+    /* LIENS INTERNES */
+    .related-articles { border-top: 1px solid var(--light-grey); margin-top: 3rem; padding-top: 2rem; }
+    .related-articles h3 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey); margin-bottom: 1rem; }
+    .related-link { display: block; padding: 1rem 0; border-bottom: 1px solid var(--light-grey); text-decoration: none; color: var(--black); font-weight: 500; }
+    .related-link:hover { opacity: 0.65; }
 
     /* ARTICLE */
     .article-container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
@@ -214,6 +224,12 @@
       </ul>
     </div>
   </nav>
+
+  <!-- CTA MINI — premier tiers de l'article -->
+  <div style="background:white; border:1px solid var(--light-grey); border-radius:8px; padding:1.2rem 1.5rem; margin:2rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <p style="margin:0; font-size:0.95rem;">Vous débutez avec l'IA ? Mon guide gratuit de 30 pages vous accompagne pas à pas.</p>
+    <a href="/#chapitres-gratuits" style="background:var(--black); color:white; padding:0.6rem 1.4rem; border-radius:2rem; font-size:0.85rem; font-weight:600; text-decoration:none; white-space:nowrap;">Télécharger</a>
+  </div>
 
   <h2 id="chatgpt">ChatGPT : l'IA qui a tout lancé</h2>
 
@@ -438,6 +454,12 @@
       <p class="faq-q">Peut-on utiliser plusieurs IA en même temps ?</p>
       <p class="faq-a">Tout à fait. Beaucoup d'utilisateurs posent la même question à deux IA différentes, puis comparent les réponses. C'est une bonne façon de vérifier une information ou d'obtenir un angle différent sur un même sujet.</p>
     </div>
+  </div>
+
+  <div class="related-articles">
+    <h3>Sur le même sujet</h3>
+    <a class="related-link" href="/blog/utiliser-ia-quand-on-debute.html">Comment utiliser l'IA quand on débute : guide pratique pas à pas →</a>
+    <a class="related-link" href="/blog/bien-ecrire-prompt-chatgpt.html">Comment bien écrire un prompt ChatGPT : les techniques qui changent tout →</a>
   </div>
 
 </article>

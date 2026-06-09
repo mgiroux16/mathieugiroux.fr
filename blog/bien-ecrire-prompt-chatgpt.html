@@ -80,6 +80,12 @@
     .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
     .btn-white { background: white; color: var(--black); padding: 0.8rem 2rem; border-radius: 2rem; font-weight: 600; text-decoration: none; font-size: 0.95rem; display: inline-block; }
     .btn-white:hover { opacity: 0.9; }
+    a { color: var(--black); }
+    a:hover { opacity: 0.65; }
+    .related-articles { border-top: 1px solid var(--light-grey); margin-top: 3rem; padding-top: 2rem; }
+    .related-articles h3 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey); margin-bottom: 1rem; }
+    .related-link { display: block; padding: 1rem 0; border-bottom: 1px solid var(--light-grey); text-decoration: none; color: var(--black); font-weight: 500; }
+    .related-link:hover { opacity: 0.65; }
     footer { border-top: 1px solid var(--light-grey); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--grey); }
     footer a { color: var(--grey); }
   </style>
@@ -104,6 +110,12 @@
   <p class="article-intro">
     La plupart des gens qui trouvent l'IA décevante ont le même problème : ils posent des questions trop vagues. L'IA donne ce qu'on lui demande. Si vous lui demandez peu, elle vous donne peu. Ce guide vous montre comment formuler des prompts qui donnent des résultats utiles, avec des exemples concrets.
   </p>
+
+  <!-- CTA MINI — premier tiers de l'article -->
+  <div style="background:white; border:1px solid var(--light-grey); border-radius:8px; padding:1.2rem 1.5rem; margin:2rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <p style="margin:0; font-size:0.95rem;">Vous débutez avec l'IA ? Mon guide gratuit de 30 pages vous accompagne pas à pas.</p>
+    <a href="/#chapitres-gratuits" style="background:var(--black); color:white; padding:0.6rem 1.4rem; border-radius:2rem; font-size:0.85rem; font-weight:600; text-decoration:none; white-space:nowrap;">Télécharger</a>
+  </div>
 
   <h2>Pourquoi vos prompts actuels ne fonctionnent pas</h2>
 
@@ -185,6 +197,12 @@
       <p class="faq-q">Les prompts fonctionnent-ils de la même façon sur tous les outils IA ?</p>
       <p class="faq-a">Globalement oui. Les techniques de base (rôle, contexte, tâche, contraintes) fonctionnent sur ChatGPT, Claude, Gemini et les autres. Chaque outil a ses particularités, mais un bon prompt reste un bon prompt quel que soit l'outil.</p>
     </div>
+  </div>
+
+  <div class="related-articles">
+    <h3>Sur le même sujet</h3>
+    <a class="related-link" href="/blog/chatgpt-claude-gemini-quelle-ia-choisir.html">ChatGPT, Claude ou Gemini : quelle IA choisir quand on débute ? →</a>
+    <a class="related-link" href="/blog/utiliser-ia-quand-on-debute.html">Comment utiliser l'IA quand on débute : guide pratique pas à pas →</a>
   </div>
 
 </article>
