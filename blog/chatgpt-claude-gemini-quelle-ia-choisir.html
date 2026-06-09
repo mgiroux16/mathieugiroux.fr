@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatGPT, Claude ou Gemini : quelle IA choisir quand on débute ? (2025)</title>
+  <meta name="description" content="ChatGPT, Claude ou Gemini : difficile de s'y retrouver quand on débute. Voici un comparatif simple et concret pour choisir l'IA qui correspond à votre usage, sans jargon technique." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mathieugiroux.fr/blog/chatgpt-claude-gemini-quelle-ia-choisir.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ChatGPT, Claude ou Gemini : quelle IA choisir quand on débute ?",
+    "description": "Comparatif simple et concret entre ChatGPT, Claude et Gemini pour choisir la bonne IA quand on débute.",
+    "author": { "@type": "Person", "name": "Mathieu Giroux", "jobTitle": "Conseiller numérique, formateur IA", "url": "https://mathieugiroux.fr" },
+    "publisher": { "@type": "Organization", "name": "IA pour Tous", "url": "https://mathieugiroux.fr" },
+    "datePublished": "2025-06-09",
+    "dateModified": "2025-06-09"
+  }
+  </script>
+
+  <!-- Schema.org FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quelle est la meilleure IA pour un débutant en 2025 ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour un débutant, ChatGPT est le meilleur point de départ en 2025 : c'est l'IA la plus documentée en français, avec le plus grand nombre de tutoriels disponibles. Une fois à l'aise, Claude se distingue pour rédiger des textes soignés, et Gemini s'intègre naturellement pour les utilisateurs Google."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle différence entre ChatGPT, Claude et Gemini ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ChatGPT (OpenAI) est la plus populaire et polyvalente, Claude (Anthropic) excelle en rédaction de textes longs et nuancés, Gemini (Google) s'intègre aux outils Google comme Gmail et Docs. Les trois sont gratuites en version de base."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Est-ce que les IA comme ChatGPT peuvent se tromper ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Des chercheurs ont mesuré entre 3 et 13 % de sources inventées dans les réponses des assistants IA. Pour tout fait, chiffre ou citation, vérifiez toujours avec une autre source."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ChatGPT, Claude et Gemini sont-ils vraiment gratuits ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, les trois proposent une version gratuite suffisante pour débuter. Les abonnements payants (18-22 euros par mois) débloquent des fonctionnalités avancées : génération d'images pour ChatGPT, limites élargies pour Claude, intégrations complètes pour Gemini."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il des compétences techniques pour utiliser une IA ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Si vous savez taper un message sur votre téléphone ou ordinateur, vous savez utiliser une IA. C'est une conversation : vous écrivez votre question en langage naturel, l'IA répond. Aucune connaissance en informatique n'est requise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle IA choisir pour écrire un email professionnel ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude est le choix le plus recommandé pour la rédaction d'emails professionnels : ses textes sont plus naturels et moins robotiques que ceux de ses concurrents, selon les retours des utilisateurs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ChatGPT parle-t-il français ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, parfaitement. ChatGPT, Claude et Gemini comprennent et répondent en français sans aucun paramétrage particulier. Écrivez simplement en français, ils répondent en français."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on utiliser plusieurs IA en même temps ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tout à fait. Beaucoup d'utilisateurs posent la même question à deux IA différentes, puis comparent les réponses. C'est une bonne façon de vérifier une information ou d'obtenir un angle différent."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf9f7;
+      --black: #111110;
+      --grey: #6b6b6b;
+      --light-grey: #e8e6e2;
+      --blue: #2563eb;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { background: var(--cream); color: var(--black); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--light-grey); position: sticky; top: 0; background: var(--cream); z-index: 100; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; text-decoration: none; color: var(--black); }
+    .nav-cta { background: var(--black); color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ARTICLE */
+    .article-container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--grey); margin-bottom: 2rem; }
+    .breadcrumb a { color: var(--grey); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--black); }
+
+    .article-meta { font-size: 0.8rem; color: var(--grey); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+
+    .article-intro { font-size: 1.1rem; color: var(--grey); line-height: 1.8; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-grey); }
+
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 1.8rem 0 0.6rem; }
+    p { margin-bottom: 1.2rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.4rem; }
+
+    /* ANSWER BOX */
+    .answer-box { background: #eff6ff; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 1.2rem 1.5rem; margin-bottom: 2.5rem; }
+    .answer-box p { margin: 0; font-size: 0.95rem; }
+
+    /* DÉFINITION */
+    .definition-box { background: white; border: 1px solid var(--light-grey); border-radius: 8px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+    .definition-box p { margin: 0; font-size: 0.9rem; color: var(--grey); }
+    .definition-box strong { color: var(--black); }
+
+    /* CITATION */
+    .citation { border-left: 3px solid var(--light-grey); padding-left: 1.2rem; margin: 1.5rem 0; color: var(--grey); font-style: italic; }
+
+    /* ENCADRÉ */
+    .encadre { background: white; border: 1px solid var(--light-grey); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .encadre-titre { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; color: var(--grey); }
+
+    /* TABLEAU */
+    .table-wrapper { overflow-x: auto; margin: 2rem 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th { background: var(--black); color: white; padding: 0.8rem 1rem; text-align: left; font-weight: 600; }
+    td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--light-grey); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: white; }
+
+    /* FAQ */
+    .faq { margin-top: 2.5rem; }
+    .faq-item { border-top: 1px solid var(--light-grey); padding: 1.2rem 0; }
+    .faq-q { font-weight: 600; margin-bottom: 0.5rem; }
+    .faq-a { color: var(--grey); font-size: 0.95rem; margin: 0; }
+
+    /* CTA */
+    .cta-block { background: var(--black); color: white; border-radius: 12px; padding: 2.5rem; margin: 3rem 0; text-align: center; }
+    .cta-block h3 { color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-white { background: white; color: var(--black); padding: 0.8rem 2rem; border-radius: 2rem; font-weight: 600; text-decoration: none; font-size: 0.95rem; display: inline-block; }
+    .btn-white:hover { opacity: 0.9; }
+
+    footer { border-top: 1px solid var(--light-grey); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--grey); }
+    footer a { color: var(--grey); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">IA pour Tous .</a>
+  <a class="nav-cta" href="/#chapitres-gratuits">Guide gratuit</a>
+</nav>
+
+<article class="article-container">
+
+  <div class="breadcrumb">
+    <a href="/">Accueil</a> › <a href="/blog/">Blog</a> › ChatGPT vs Claude vs Gemini
+  </div>
+
+  <p class="article-meta">Mathieu Giroux · 9 juin 2025 · 9 min de lecture</p>
+
+  <h1>ChatGPT, Claude ou Gemini : quelle IA choisir quand on débute ?</h1>
+
+  <div class="answer-box">
+    <p><strong>En résumé :</strong> pour débuter, choisissez <strong>ChatGPT</strong> si vous voulez tout faire simplement, <strong>Claude</strong> si vous rédigez des textes importants, <strong>Gemini</strong> si vous utilisez déjà Gmail ou Google Docs. Les trois sont gratuites.</p>
+  </div>
+
+  <p class="article-intro">
+    En 2022, ChatGPT a atteint 100 millions d'utilisateurs en deux mois. Aucune application n'avait jamais grossi aussi vite. Depuis, Claude et Gemini ont rejoint la course, et choisir entre les trois est devenue la première question que se posent les débutants. Dans cet article, je vous explique les différences concrètes pour trouver celle qui correspond à votre usage, sans jargon technique.
+  </p>
+
+  <nav aria-label="Sommaire">
+    <div class="encadre">
+      <p class="encadre-titre">Dans cet article</p>
+      <ul>
+        <li><a href="#chatgpt">ChatGPT : l'IA qui a tout lancé</a></li>
+        <li><a href="#claude">Claude : l'IA qui rédige le mieux</a></li>
+        <li><a href="#gemini">Gemini : l'IA de Google</a></li>
+        <li><a href="#comparatif">Comparatif rapide des trois</a></li>
+        <li><a href="#choisir">Laquelle choisir selon votre usage ?</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h2 id="chatgpt">ChatGPT : l'IA qui a tout lancé</h2>
+
+  <div class="definition-box">
+    <p><strong>Définition :</strong> ChatGPT est un assistant IA développé par OpenAI (San Francisco). Lancé en novembre 2022, il permet de rédiger des textes, répondre à des questions et réaliser des tâches variées en langage naturel, sans aucune compétence technique.</p>
+  </div>
+
+  <p>C'est ChatGPT qui a popularisé l'idée de "converser avec une machine" à grande échelle. Elle reste aujourd'hui l'IA la plus connue et la plus utilisée dans le monde entier, avec plus de 180 millions d'utilisateurs actifs (OpenAI, 2024).</p>
+
+  <h3>Ce qu'elle fait bien</h3>
+  <ul>
+    <li>Répondre à des questions variées sur presque tous les sujets</li>
+    <li>Rédiger des textes : emails, lettres, résumés, idées</li>
+    <li>Expliquer des concepts complexes en langage simple</li>
+    <li>Générer des images (version payante, via DALL-E)</li>
+    <li>Rechercher des informations récentes sur internet (version payante)</li>
+  </ul>
+
+  <h3>Ses limites</h3>
+  <ul>
+    <li>La version gratuite est moins puissante que la version payante (GPT-4o)</li>
+    <li>Comme toutes les IA, elle peut inventer des informations avec assurance : les chercheurs ont mesuré entre 3 et 13 % de sources fabriquées dans les réponses des assistants IA</li>
+    <li>La quantité de fonctionnalités peut sembler chargée pour un débutant</li>
+  </ul>
+
+  <p class="citation">"ChatGPT reste le point d'entrée le plus naturel pour découvrir l'IA : c'est l'outil le plus documenté en français, et si vous êtes bloqué, vous trouverez immédiatement de l'aide en ligne."</p>
+
+  <p><strong>Idéal pour :</strong> découvrir l'IA pour la première fois, rédiger des textes simples, obtenir des réponses rapides sur n'importe quel sujet.</p>
+
+  <h2 id="claude">Claude : l'IA qui rédige le mieux</h2>
+
+  <div class="definition-box">
+    <p><strong>Définition :</strong> Claude est un assistant IA développé par Anthropic (fondée en 2021). Il se distingue par la qualité de ses textes longs, sa capacité à analyser des documents et ses réponses nuancées sur des sujets complexes.</p>
+  </div>
+
+  <p>Claude est développée par Anthropic, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI. Elle est moins connue du grand public, mais reconnue par les utilisateurs avancés pour la qualité naturelle de ses textes.</p>
+
+  <p>Pour comprendre la différence : imaginez une agence de consultants. ChatGPT serait le consultant généraliste capable de tout traiter rapidement. Claude serait le spécialiste senior qu'on appelle quand on veut une analyse approfondie, bien rédigée et nuancée.</p>
+
+  <h3>Ce qu'elle fait bien</h3>
+  <ul>
+    <li>Rédiger des textes longs et cohérents : articles, rapports, emails complexes</li>
+    <li>Comprendre des demandes nuancées ou mal formulées</li>
+    <li>Analyser des documents : collez un texte long, elle en fait un résumé ou répond à vos questions dessus</li>
+    <li>Donner des réponses équilibrées sur des sujets délicats</li>
+  </ul>
+
+  <h3>Ses limites</h3>
+  <ul>
+    <li>Elle ne génère pas d'images</li>
+    <li>Elle est moins intégrée aux outils du quotidien que ses concurrentes</li>
+    <li>La version gratuite a des limites d'utilisation journalières</li>
+  </ul>
+
+  <p class="citation">"Si vous devez rédiger un email important, un rapport ou analyser un document long, Claude produit les textes les plus naturels et les mieux structurés des trois grandes IA accessibles gratuitement."</p>
+
+  <p><strong>Idéal pour :</strong> écrire des textes soignés, analyser des documents, obtenir des explications détaillées et bien construites.</p>
+
+  <h2 id="gemini">Gemini : l'IA de Google</h2>
+
+  <div class="definition-box">
+    <p><strong>Définition :</strong> Gemini est l'assistant IA développé par Google DeepMind. Son avantage principal est son intégration native dans l'écosystème Google : Gmail, Google Docs, Google Drive, et sa capacité à rechercher des informations en temps réel sur le web.</p>
+  </div>
+
+  <p>Pour comprendre son positionnement : Gemini, c'est la voiture de location haut de gamme. Puissante, toujours à jour, entretien inclus. Vous n'avez qu'à conduire, et elle se connecte directement à tous les outils Google que vous utilisez peut-être déjà.</p>
+
+  <h3>Ce qu'elle fait bien</h3>
+  <ul>
+    <li>Rechercher des informations récentes sur internet, avec les sources visibles</li>
+    <li>S'intégrer dans Gmail, Google Docs, Google Drive</li>
+    <li>Résumer des emails ou des documents</li>
+    <li>La veille d'actualité en temps réel</li>
+  </ul>
+
+  <h3>Ses limites</h3>
+  <ul>
+    <li>Moins performante que Claude sur les textes longs et complexes</li>
+    <li>Les fonctionnalités avancées d'intégration Google nécessitent un abonnement</li>
+    <li>Son intégration à l'écosystème Google soulève des questions de confidentialité des données</li>
+  </ul>
+
+  <p class="citation">"Pour les personnes qui utilisent Gmail et Google Docs au quotidien, Gemini est l'IA qui s'intègre le plus naturellement à leurs habitudes, sans rien réapprendre."</p>
+
+  <p><strong>Idéal pour :</strong> les utilisateurs de l'écosystème Google, la veille d'actualité, les résumés d'emails et de documents.</p>
+
+  <h2 id="comparatif">Comparatif ChatGPT vs Claude vs Gemini (2025)</h2>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Critère</th>
+          <th>ChatGPT (OpenAI)</th>
+          <th>Claude (Anthropic)</th>
+          <th>Gemini (Google)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Facilité de prise en main</td>
+          <td>⭐⭐⭐⭐</td>
+          <td>⭐⭐⭐⭐</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Qualité de rédaction</td>
+          <td>⭐⭐⭐⭐</td>
+          <td>⭐⭐⭐⭐⭐</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Recherche d'infos récentes</td>
+          <td>⭐⭐⭐ (payant)</td>
+          <td>⭐⭐⭐</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Génération d'images</td>
+          <td>⭐⭐⭐⭐ (payant)</td>
+          <td>Non disponible</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Intégration outils Google</td>
+          <td>Non</td>
+          <td>Non</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Version gratuite suffisante</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td>Ressources en français</td>
+          <td>⭐⭐⭐⭐⭐</td>
+          <td>⭐⭐⭐</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>Prix version payante</td>
+          <td>20 €/mois</td>
+          <td>18 €/mois</td>
+          <td>22 €/mois</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="choisir">Laquelle choisir selon votre usage ?</h2>
+
+  <h3>Vous voulez juste essayer l'IA pour la première fois</h3>
+  <p><strong>Choisissez ChatGPT.</strong> C'est l'IA la plus documentée, avec le plus de tutoriels disponibles en français. Rendez-vous sur <strong>chatgpt.com</strong>, créez un compte gratuit, et posez votre première question.</p>
+
+  <h3>Vous utilisez Gmail et Google Docs tous les jours</h3>
+  <p><strong>Choisissez Gemini.</strong> L'intégration à vos outils existants vous fera gagner du temps immédiatement, sans changer vos habitudes. Accessible depuis <strong>gemini.google.com</strong> avec votre compte Google existant.</p>
+
+  <h3>Vous voulez rédiger des textes de qualité</h3>
+  <p><strong>Choisissez Claude.</strong> Les textes produits sont généralement plus naturels et mieux structurés. Disponible sur <strong>claude.ai</strong>, sans installation.</p>
+
+  <h3>Vous avez besoin d'informations récentes</h3>
+  <p><strong>Choisissez Gemini.</strong> Directement connecté aux sources Google, il indique ses sources et travaille sur des données à jour.</p>
+
+  <div class="encadre">
+    <p class="encadre-titre">Ma recommandation pour un vrai débutant</p>
+    <p>Commencez par ChatGPT pour comprendre le principe de la conversation avec une IA. Puis, quand vous vous sentez à l'aise, testez Claude avec la même question et comparez les réponses. Vous verrez la différence en quelques secondes.</p>
+    <p style="margin-bottom:0;">Les trois sont gratuites dans leur version de base. Rien ne vous empêche de les tester toutes les trois avec une même question simple, et de comparer.</p>
+  </div>
+
+  <div class="cta-block">
+    <h3>Pour aller plus loin</h3>
+    <p>Savoir quelle IA choisir, c'est un premier pas. Savoir comment lui parler pour obtenir de bons résultats, c'est ce qui fait vraiment la différence.</p>
+    <a class="btn-white" href="/#chapitres-gratuits">Télécharger le guide gratuit (30 pages)</a>
+    <p style="margin-top:1.2rem;">Et si vous voulez aller encore plus loin, mes deux livres disponibles sur Amazon vous accompagnent pas à pas, avec des exemples concrets tirés du quotidien.</p>
+  </div>
+
+  <div class="faq">
+    <h2 id="faq">Questions fréquentes sur ChatGPT, Claude et Gemini</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">Quelle est la meilleure IA pour un débutant en 2025 ?</p>
+      <p class="faq-a">Pour débuter, ChatGPT est le choix le plus simple : c'est l'IA la plus documentée en français, avec le plus grand nombre de tutoriels disponibles. Une fois à l'aise, Claude se distingue pour la rédaction et Gemini pour les utilisateurs Google.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Quelle différence entre ChatGPT, Claude et Gemini ?</p>
+      <p class="faq-a">ChatGPT (OpenAI) est la plus populaire et polyvalente. Claude (Anthropic) excelle en rédaction de textes longs et nuancés. Gemini (Google) s'intègre aux outils Google comme Gmail et Docs. Les trois sont gratuites en version de base.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">ChatGPT, Claude et Gemini sont-ils vraiment gratuits ?</p>
+      <p class="faq-a">Oui, les trois proposent une version gratuite suffisante pour débuter. Les abonnements payants (18 à 22 euros par mois) débloquent des fonctionnalités avancées : génération d'images pour ChatGPT, limites élargies pour Claude, intégrations complètes pour Gemini.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Est-ce dangereux de donner des informations personnelles à une IA ?</p>
+      <p class="faq-a">Par précaution, ne partagez jamais d'informations très sensibles : numéro de sécurité sociale, coordonnées bancaires, mots de passe. Pour des usages courants comme rédiger un email ou poser une question, ces outils sont parfaitement sûrs.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">L'IA peut-elle inventer des informations ?</p>
+      <p class="faq-a">Oui. Des chercheurs spécialisés dans les systèmes d'IA ont mesuré entre 3 et 13 % de sources inventées dans les réponses des assistants IA. Pour tout fait, chiffre ou citation, vérifiez toujours avec une autre source avant de partager.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Faut-il être bon en informatique pour utiliser une IA ?</p>
+      <p class="faq-a">Non. Si vous savez taper un message sur votre téléphone ou ordinateur, vous savez utiliser une IA. C'est une conversation : vous écrivez votre question en langage naturel, l'IA répond. Aucune compétence technique n'est requise.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Quelle IA choisir pour écrire un email professionnel ?</p>
+      <p class="faq-a">Claude est le choix le plus recommandé pour la rédaction d'emails professionnels : ses textes sont plus naturels et moins robotiques que ceux de ses concurrents, selon les retours des utilisateurs.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">ChatGPT parle-t-il français ?</p>
+      <p class="faq-a">Oui, parfaitement. ChatGPT, Claude et Gemini comprennent et répondent en français sans aucun paramétrage particulier. Écrivez simplement en français, ils répondent en français.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Peut-on utiliser plusieurs IA en même temps ?</p>
+      <p class="faq-a">Tout à fait. Beaucoup d'utilisateurs posent la même question à deux IA différentes, puis comparent les réponses. C'est une bonne façon de vérifier une information ou d'obtenir un angle différent sur un même sujet.</p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p><a href="/">IA pour Tous</a> · Par Mathieu Giroux, conseiller numérique · <a href="/#chapitres-gratuits">Guide gratuit</a></p>
+</footer>
+
+</body>
+</html>
