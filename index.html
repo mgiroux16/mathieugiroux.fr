@@ -682,7 +682,12 @@
       a.download = 'guide-gratuit-ia-pour-tous.pdf';
       a.click();
 
-      // Beehiiv à connecter quand la publication sera configurée
+      // Envoi vers n8n → email de bienvenue + lead magnet
+      fetch('https://mg-n8n.fr/webhook/beehiiv-new-subscriber', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      }).catch(() => {});
     });
 
     // Raccourci secret : Shift + Alt + E
