@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment utiliser l'IA quand on débute : guide complet sans jargon</title>
+  <meta name="description" content="Vous voulez utiliser l'IA mais vous ne savez pas par où commencer ? Ce guide pratique vous explique comment démarrer avec ChatGPT ou Claude, sans compétences techniques." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mathieugiroux.fr/blog/utiliser-ia-quand-on-debute.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comment utiliser l'IA quand on débute : guide complet sans jargon",
+    "description": "Guide pratique pour démarrer avec l'IA sans compétences techniques.",
+    "author": { "@type": "Person", "name": "Mathieu Giroux" },
+    "publisher": { "@type": "Organization", "name": "IA pour Tous" },
+    "datePublished": "2026-06-09",
+    "dateModified": "2026-06-09"
+  }
+  </script>
+
+  <!-- Schema.org FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quelle IA utiliser quand on débute ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT (OpenAI) et Claude (Anthropic) sont les deux meilleures options pour débuter. Tous deux ont une version gratuite, fonctionnent dans le navigateur sans installation, et comprennent le français parfaitement. Pour un premier contact, Claude est souvent plus clair dans ses explications." }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il des compétences en informatique pour utiliser l'IA ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non. Utiliser une IA comme ChatGPT ou Claude ne demande aucune compétence technique. Vous tapez votre question en français, l'IA répond. C'est tout. La seule compétence utile est de savoir formuler clairement ce que vous voulez, comme vous le feriez avec quelqu'un en face de vous." }
+      },
+      {
+        "@type": "Question",
+        "name": "L'IA peut-elle se tromper ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Les IA peuvent inventer des informations avec un ton très assuré. C'est ce qu'on appelle les hallucinations. Pour les faits précis (chiffres, dates, lois), vérifiez toujours la source. Pour les tâches de rédaction, de reformulation ou d'organisation, les erreurs sont rares et facilement détectables." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf9f7;
+      --black: #111110;
+      --grey: #6b6b6b;
+      --light-grey: #e8e6e2;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { background: var(--cream); color: var(--black); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--light-grey); position: sticky; top: 0; background: var(--cream); z-index: 100; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; text-decoration: none; color: var(--black); }
+    .nav-cta { background: var(--black); color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ARTICLE */
+    .article-container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--grey); margin-bottom: 2rem; }
+    .breadcrumb a { color: var(--grey); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--black); }
+
+    .article-meta { font-size: 0.8rem; color: var(--grey); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+
+    .article-intro { font-size: 1.1rem; color: var(--grey); line-height: 1.8; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-grey); }
+
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 1.8rem 0 0.6rem; }
+    p { margin-bottom: 1.2rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.4rem; }
+
+    .encadre { background: white; border: 1px solid var(--light-grey); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .encadre-titre { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; color: var(--grey); }
+
+    .faq { margin-top: 2.5rem; }
+    .faq-item { border-top: 1px solid var(--light-grey); padding: 1.2rem 0; }
+    .faq-q { font-weight: 600; margin-bottom: 0.5rem; }
+    .faq-a { color: var(--grey); font-size: 0.95rem; }
+
+    .cta-block { background: var(--black); color: white; border-radius: 12px; padding: 2.5rem; margin: 3rem 0; text-align: center; }
+    .cta-block h3 { color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-white { background: white; color: var(--black); padding: 0.8rem 2rem; border-radius: 2rem; font-weight: 600; text-decoration: none; font-size: 0.95rem; display: inline-block; }
+    .btn-white:hover { opacity: 0.9; }
+
+    footer { border-top: 1px solid var(--light-grey); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--grey); }
+    footer a { color: var(--grey); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">IA pour Tous .</a>
+  <a class="nav-cta" href="/#chapitres-gratuits">Guide gratuit</a>
+</nav>
+
+<article class="article-container">
+
+  <div class="breadcrumb">
+    <a href="/">Accueil</a> › <a href="/blog/">Blog</a> › Utiliser l'IA quand on débute
+  </div>
+
+  <p class="article-meta">Mathieu Giroux · 9 juin 2026 · 8 min de lecture</p>
+
+  <h1>Comment utiliser l'IA quand on débute : guide complet sans jargon</h1>
+
+  <p class="article-intro">
+    Vous entendez parler d'IA partout mais vous ne savez pas par où commencer. ChatGPT, Claude, Gemini : les noms se multiplient, les promesses aussi. Ce guide vous explique comment démarrer concrètement, sans compétences techniques, en 20 minutes.
+  </p>
+
+  <h2>Ce que l'IA peut faire pour vous, aujourd'hui</h2>
+
+  <p>Avant de parler d'outils, parlons de cas d'usage. Parce que la question n'est pas "comment fonctionne l'IA ?" mais "à quoi ça me sert, moi, maintenant ?"</p>
+
+  <p>Dans mon travail de conseiller numérique, j'accompagne chaque semaine des personnes qui découvrent l'IA. Voici les situations où elles trouvent le plus de valeur, dès le premier jour :</p>
+
+  <ul>
+    <li><strong>Rédiger un email difficile</strong> : vous décrivez la situation, l'IA propose une formulation professionnelle en 10 secondes.</li>
+    <li><strong>Comprendre un document administratif</strong> : vous collez le texte, vous demandez "explique-moi ça simplement", vous obtenez l'essentiel sans jargon.</li>
+    <li><strong>Préparer une réunion ou un entretien</strong> : vous donnez le contexte, l'IA anticipe les questions et vous aide à structurer vos arguments.</li>
+    <li><strong>Faire des recherches rapides</strong> : au lieu d'ouvrir dix onglets, vous posez directement votre question et obtenez une synthèse claire.</li>
+  </ul>
+
+  <p>Ce ne sont pas des promesses. Ce sont des usages que je vois fonctionner chaque semaine, avec des personnes qui n'ont aucune formation technique.</p>
+
+  <h2>Quelle IA choisir pour débuter ?</h2>
+
+  <p>Deux options gratuites, fiables, en français :</p>
+
+  <h3>ChatGPT (OpenAI)</h3>
+  <p>Le plus connu. Disponible sur <strong>chat.openai.com</strong>. Version gratuite suffisante pour démarrer. Interface simple, répond en français, fonctionne sur mobile. Quelques limitations de vitesse en heure de pointe sur la version gratuite.</p>
+
+  <h3>Claude (Anthropic)</h3>
+  <p>Disponible sur <strong>claude.ai</strong>. Souvent plus précis dans ses explications, plus prudent sur les informations incertaines. Ma recommandation pour les débutants qui veulent comprendre ce qu'ils font. Version gratuite généreuse.</p>
+
+  <p>Mon conseil : ouvrez les deux, posez la même question, observez la différence. Vous trouverez rapidement celui qui vous convient.</p>
+
+  <h2>Votre premier échange en 3 étapes</h2>
+
+  <p>Beaucoup de gens bloquent sur la première phrase. Voici comment démarrer sans prise de tête.</p>
+
+  <h3>Étape 1 : donnez le contexte</h3>
+  <p>L'IA ne vous connaît pas. Dites-lui qui vous êtes et ce que vous voulez faire. Exemple : "Je suis assistante dans une PME et je dois écrire un email de relance à un client qui n'a pas répondu depuis 3 semaines."</p>
+
+  <h3>Étape 2 : soyez précis sur ce que vous attendez</h3>
+  <p>Pas "écris un email" mais "propose-moi un email court, professionnel, sans être agressif, qui rappelle notre dernière conversation du 15 mai." Plus vous êtes précis, meilleur est le résultat.</p>
+
+  <h3>Étape 3 : affinez</h3>
+  <p>La première réponse est rarement parfaite. C'est normal. Dites ce que vous voulez changer : "C'est bien mais rends-le plus chaleureux" ou "Raccourcis d'un tiers". L'IA s'adapte. C'est une conversation, pas un moteur de recherche.</p>
+
+  <div class="encadre">
+    <p class="encadre-titre">À retenir</p>
+    <ul>
+      <li>Contexte + précision = bonne réponse</li>
+      <li>La première réponse est un brouillon, pas le résultat final</li>
+      <li>Demandez à l'IA de se corriger si quelque chose ne va pas</li>
+      <li>Vérifiez toujours les faits précis (chiffres, dates, sources)</li>
+    </ul>
+  </div>
+
+  <h2>Les 3 pièges que personne ne vous explique</h2>
+
+  <h3>1. L'IA vous donne raison par défaut</h3>
+  <p>Si vous lui soumettez une mauvaise idée en demandant "c'est bien ?" elle va trouver des arguments pour valider. Ce n'est pas de la mauvaise foi : elle a été entraînée à produire des réponses qui plaisent. Demandez plutôt "quels sont les problèmes avec cette idée ?" pour obtenir une analyse honnête.</p>
+
+  <h3>2. Elle invente avec assurance</h3>
+  <p>L'IA ne cherche pas dans une base de données. Elle prédit le texte le plus probable. Parfois cette prédiction produit des faits inexacts présentés avec le même ton calme que les vraies informations. Traitez toujours les chiffres précis, les citations et les noms propres comme des hypothèses à vérifier.</p>
+
+  <h3>3. La formulation change tout</h3>
+  <p>"Mon plan est-il bon ?" et "Quels sont les risques de mon plan ?" donnent des réponses opposées à la même IA sur le même plan. Ce n'est pas un bug : c'est la logique du système. Formulez vos questions pour obtenir ce dont vous avez vraiment besoin.</p>
+
+  <div class="cta-block">
+    <h3>Vous voulez aller plus loin ?</h3>
+    <p>Le livre "IA pour Tous" développe tous ces points avec des exercices concrets, des exemples réels et les techniques que j'utilise avec mes ateliers. Pensé pour les débutants complets, sans jargon technique.</p>
+    <a class="btn-white" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Voir le livre sur Amazon — 6,99 €</a>
+  </div>
+
+  <div class="faq">
+    <h2>Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">Quelle IA utiliser quand on débute ?</p>
+      <p class="faq-a">ChatGPT et Claude sont les deux meilleures options gratuites pour démarrer. Les deux fonctionnent dans le navigateur, comprennent le français et ne demandent aucune installation. Claude est souvent plus clair dans ses explications pour les débutants.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Faut-il des compétences en informatique pour utiliser l'IA ?</p>
+      <p class="faq-a">Non. Vous tapez votre question en français, l'IA répond. La seule compétence utile est de savoir formuler clairement ce que vous voulez, comme vous le feriez avec quelqu'un en face de vous.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">L'IA peut-elle se tromper ?</p>
+      <p class="faq-a">Oui. Pour les faits précis (chiffres, dates, lois), vérifiez toujours la source. Pour les tâches de rédaction, de reformulation ou d'organisation, les erreurs sont rares et facilement détectables.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">L'IA est-elle gratuite ?</p>
+      <p class="faq-a">ChatGPT et Claude ont tous les deux une version gratuite largement suffisante pour débuter. Les versions payantes (environ 20 €/mois) offrent plus de vitesse et de capacité, mais ne sont pas nécessaires pour commencer.</p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p><a href="/">IA pour Tous</a> · Par Mathieu Giroux, conseiller numérique · <a href="/#chapitres-gratuits">Guide gratuit</a></p>
+</footer>
+
+</body>
+</html>

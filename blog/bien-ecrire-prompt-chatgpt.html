@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment bien écrire un prompt ChatGPT : les techniques qui changent tout</title>
+  <meta name="description" content="Vous obtenez des réponses décevantes de ChatGPT ? Le problème vient souvent de la façon dont vous posez la question. Voici les techniques concrètes pour écrire de bons prompts." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mathieugiroux.fr/blog/bien-ecrire-prompt-chatgpt.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comment bien écrire un prompt ChatGPT : les techniques qui changent tout",
+    "author": { "@type": "Person", "name": "Mathieu Giroux" },
+    "publisher": { "@type": "Organization", "name": "IA pour Tous" },
+    "datePublished": "2026-06-09",
+    "dateModified": "2026-06-09"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "C'est quoi un prompt ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Un prompt, c'est simplement le message que vous envoyez à une IA comme ChatGPT ou Claude. La qualité de la réponse dépend directement de la qualité de ce message. Un prompt précis et bien structuré donne une réponse utile. Un prompt vague donne une réponse générique." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la longueur idéale d'un prompt ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il n'y a pas de longueur idéale. Un bon prompt est celui qui contient toutes les informations nécessaires pour que l'IA comprenne exactement ce que vous voulez : votre rôle, le contexte, ce que vous attendez comme résultat, et les contraintes éventuelles. Parfois 2 lignes suffisent, parfois 10 sont nécessaires." }
+      },
+      {
+        "@type": "Question",
+        "name": "Que faire si la réponse de ChatGPT ne convient pas ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ne recommencez pas de zéro. Dites à l'IA ce qui ne va pas et ce que vous voulez à la place. Par exemple : 'C'est trop formel, rends-le plus naturel' ou 'Tu n'as pas mentionné X, ajoute-le dans la troisième partie.' L'IA s'adapte très bien aux corrections précises." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #faf9f7; --black: #111110; --grey: #6b6b6b; --light-grey: #e8e6e2; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { background: var(--cream); color: var(--black); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--light-grey); position: sticky; top: 0; background: var(--cream); z-index: 100; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; text-decoration: none; color: var(--black); }
+    .nav-cta { background: var(--black); color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+    .nav-cta:hover { opacity: 0.85; }
+    .article-container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .breadcrumb { font-size: 0.8rem; color: var(--grey); margin-bottom: 2rem; }
+    .breadcrumb a { color: var(--grey); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--black); }
+    .article-meta { font-size: 0.8rem; color: var(--grey); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .article-intro { font-size: 1.1rem; color: var(--grey); line-height: 1.8; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-grey); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 1.8rem 0 0.6rem; }
+    p { margin-bottom: 1.2rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.4rem; }
+    .encadre { background: white; border: 1px solid var(--light-grey); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .encadre-titre { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; color: var(--grey); }
+    .exemple { background: #f0f0ee; border-left: 3px solid var(--black); padding: 1rem 1.2rem; margin: 1rem 0 1.5rem; border-radius: 0 6px 6px 0; font-size: 0.95rem; }
+    .exemple-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey); margin-bottom: 0.4rem; }
+    .faq { margin-top: 2.5rem; }
+    .faq-item { border-top: 1px solid var(--light-grey); padding: 1.2rem 0; }
+    .faq-q { font-weight: 600; margin-bottom: 0.5rem; }
+    .faq-a { color: var(--grey); font-size: 0.95rem; }
+    .cta-block { background: var(--black); color: white; border-radius: 12px; padding: 2.5rem; margin: 3rem 0; text-align: center; }
+    .cta-block h3 { color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-white { background: white; color: var(--black); padding: 0.8rem 2rem; border-radius: 2rem; font-weight: 600; text-decoration: none; font-size: 0.95rem; display: inline-block; }
+    .btn-white:hover { opacity: 0.9; }
+    footer { border-top: 1px solid var(--light-grey); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--grey); }
+    footer a { color: var(--grey); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">IA pour Tous .</a>
+  <a class="nav-cta" href="/#chapitres-gratuits">Guide gratuit</a>
+</nav>
+
+<article class="article-container">
+
+  <div class="breadcrumb">
+    <a href="/">Accueil</a> › <a href="/blog/">Blog</a> › Écrire un bon prompt
+  </div>
+
+  <p class="article-meta">Mathieu Giroux · 9 juin 2026 · 7 min de lecture</p>
+
+  <h1>Comment bien écrire un prompt ChatGPT : les techniques qui changent tout</h1>
+
+  <p class="article-intro">
+    La plupart des gens qui trouvent l'IA décevante ont le même problème : ils posent des questions trop vagues. L'IA donne ce qu'on lui demande. Si vous lui demandez peu, elle vous donne peu. Ce guide vous montre comment formuler des prompts qui donnent des résultats utiles, avec des exemples concrets.
+  </p>
+
+  <h2>Pourquoi vos prompts actuels ne fonctionnent pas</h2>
+
+  <p>J'ai accompagné des centaines de personnes qui découvrent l'IA. Le schéma est presque toujours le même : elles tapent une question courte, obtiennent une réponse générique, et concluent que "l'IA c'est pas si bien que ça".</p>
+
+  <p>La réalité : l'IA a répondu exactement à ce qu'on lui avait demandé. Le problème n'est pas l'IA, c'est la question.</p>
+
+  <p>Comparez ces deux prompts :</p>
+
+  <div class="exemple">
+    <p class="exemple-label">Prompt vague</p>
+    <p>"Écris un email professionnel."</p>
+  </div>
+
+  <div class="exemple">
+    <p class="exemple-label">Prompt précis</p>
+    <p>"Je suis responsable des achats dans une PME. Je dois écrire un email à notre fournisseur Dupont &amp; Fils pour demander un délai de paiement de 30 jours supplémentaires sur la facture du 2 mai 2026. Notre relation dure depuis 5 ans. Ton de l'email : professionnel mais chaleureux. Maximum 150 mots."</p>
+  </div>
+
+  <p>Le deuxième donne un email utilisable directement. Le premier donne un modèle générique que vous devrez réécrire entièrement.</p>
+
+  <h2>La structure en 4 parties</h2>
+
+  <p>Un bon prompt contient généralement quatre éléments. Vous n'en avez pas toujours besoin des quatre, mais savoir les identifier vous aide à construire vos requêtes.</p>
+
+  <h3>1. Le rôle</h3>
+  <p>Dites à l'IA qui vous êtes ou quel angle vous voulez qu'elle adopte. "Je suis infirmière", "Tu es un correcteur de texte professionnel", "Je gère une petite épicerie bio". Le rôle calibre le registre et le niveau de détail de la réponse.</p>
+
+  <h3>2. Le contexte</h3>
+  <p>Les informations de fond nécessaires pour comprendre votre demande. La situation, ce qui s'est passé avant, les contraintes importantes. Plus vous en donnez, moins l'IA doit inventer.</p>
+
+  <h3>3. La tâche</h3>
+  <p>Ce que vous voulez concrètement : rédiger, résumer, expliquer, corriger, comparer, lister. Soyez précis sur le format attendu : "un email de 100 mots", "trois options avec les avantages et inconvénients de chacune", "une explication comme si je n'avais aucune connaissance technique".</p>
+
+  <h3>4. Les contraintes</h3>
+  <p>Ce que vous ne voulez pas : "sans jargon", "sans mentionner les prix", "en évitant le tutoiement", "sans liste à puces". Les contraintes sont souvent ce qui fait la différence entre une réponse correcte et une réponse vraiment adaptée.</p>
+
+  <div class="encadre">
+    <p class="encadre-titre">Exemple complet</p>
+    <p>"Je suis assistante administrative dans un cabinet médical (rôle). Une patiente a laissé un message vocal agressif parce qu'elle n'a pas reçu son ordonnance à temps, alors qu'elle avait bien envoyé une demande par email il y a 4 jours (contexte). Rédige une réponse email qui reconnaît l'erreur, s'excuse, et lui propose de récupérer l'ordonnance dès demain matin (tâche). Ton calme et empathique, pas de justification excessive, moins de 120 mots (contraintes)."</p>
+  </div>
+
+  <h2>Trois techniques avancées accessibles à tous</h2>
+
+  <h3>Demandez plusieurs versions</h3>
+  <p>Ajoutez "propose-moi trois versions différentes" à n'importe quelle demande de rédaction. Vous aurez le choix plutôt que de devoir tout modifier si la première ne convient pas.</p>
+
+  <h3>Demandez la critique avant le travail</h3>
+  <p>Avant de demander à l'IA de rédiger quelque chose, demandez-lui "quelles informations te manquent pour répondre parfaitement à ma demande ?" Elle va identifier les zones floues dans votre brief et vous permettre de compléter avant de démarrer.</p>
+
+  <h3>Utilisez l'avocat du diable</h3>
+  <p>Après avoir reçu une réponse ou avoir soumis une idée, demandez "maintenant joue l'avocat du diable et dis-moi ce qui pourrait mal tourner." Vous obtenez une analyse critique que l'IA ne produit jamais spontanément.</p>
+
+  <div class="cta-block">
+    <h3>Ces techniques, et bien d'autres</h3>
+    <p>Le livre "Prompter comme un Pro" (volume 2 de la série IA pour Tous) développe l'ensemble des techniques de formulation, avec des exercices pratiques à chaque chapitre et des exemples réels tirés de situations professionnelles.</p>
+    <a class="btn-white" href="https://www.amazon.fr/gp/product/B0GX2Y21Y3" target="_blank" rel="noopener">Voir le livre sur Amazon — 6,99 €</a>
+  </div>
+
+  <div class="faq">
+    <h2>Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">C'est quoi un prompt ?</p>
+      <p class="faq-a">Un prompt, c'est simplement le message que vous envoyez à une IA. La qualité de la réponse dépend directement de la qualité de ce message. Un prompt précis et bien structuré donne une réponse utile. Un prompt vague donne une réponse générique.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Quelle est la longueur idéale d'un prompt ?</p>
+      <p class="faq-a">Il n'y a pas de longueur idéale. Un bon prompt contient toutes les informations nécessaires pour que l'IA comprenne exactement ce que vous voulez. Parfois 2 lignes suffisent, parfois 10 sont nécessaires.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Que faire si la réponse ne convient pas ?</p>
+      <p class="faq-a">Ne recommencez pas de zéro. Dites à l'IA ce qui ne va pas et ce que vous voulez à la place : "C'est trop formel, rends-le plus naturel" ou "Ajoute un exemple concret dans la deuxième partie." L'IA s'adapte très bien aux corrections précises.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Les prompts fonctionnent-ils de la même façon sur tous les outils IA ?</p>
+      <p class="faq-a">Globalement oui. Les techniques de base (rôle, contexte, tâche, contraintes) fonctionnent sur ChatGPT, Claude, Gemini et les autres. Chaque outil a ses particularités, mais un bon prompt reste un bon prompt quel que soit l'outil.</p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p><a href="/">IA pour Tous</a> · Par Mathieu Giroux, conseiller numérique · <a href="/#chapitres-gratuits">Guide gratuit</a></p>
+</footer>
+
+</body>
+</html>
