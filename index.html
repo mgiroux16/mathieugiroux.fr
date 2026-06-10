@@ -571,7 +571,7 @@
           <button type="submit" class="btn-dark">Recevoir le guide gratuit</button>
         </div>
       </form>
-      <p class="form-success" id="form-success">C'est parti. Le téléchargement démarre...</p>
+      <p class="form-success" id="form-success">C'est dans ta boîte mail. Le guide arrive dans quelques secondes.</p>
       <p class="form-error" id="form-error">Une erreur s'est produite. Réessaie ou écris à contact@mathieugiroux.fr</p>
     </div>
   </section>
@@ -676,20 +676,16 @@
 
       btn.textContent = '...'; btn.disabled = true;
 
-      // Déclenche le téléchargement immédiatement après validation email
-      document.getElementById('form-success').style.display = 'block';
-      this.style.display = 'none';
-      const a = document.createElement('a');
-      a.href = 'lead-magnet.pdf';
-      a.download = 'guide-gratuit-ia-pour-tous.pdf';
-      a.click();
-
-      // Envoi vers n8n → email de bienvenue + lead magnet
+      // Envoi vers n8n → Beehiiv + email avec lien PDF
       fetch('https://mg-n8n.fr/webhook/beehiiv-new-subscriber', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email })
       }).catch(() => {});
+
+      // Afficher le message de confirmation (pas de téléchargement direct)
+      document.getElementById('form-success').style.display = 'block';
+      this.style.display = 'none';
     });
 
     // Raccourci secret : Shift + Alt + E
