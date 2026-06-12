@@ -173,18 +173,34 @@
     .guide .label { color: rgba(255,253,249,0.5); }
     .guide h2 { color: var(--white); margin-bottom: 1rem; }
     .guide p { color: rgba(255,253,249,0.75); font-size: 0.97rem; max-width: 56ch; margin-bottom: 2rem; }
-    .form-row { display: flex; gap: 0.7rem; flex-wrap: wrap; max-width: 540px; }
-    .form-row input {
-      flex: 1; min-width: 230px;
-      background: var(--white); border: 1px solid transparent;
-      color: var(--ink); padding: 0.8rem 1.1rem;
-      border-radius: 2px; font-size: 0.92rem; font-family: 'Inter', sans-serif;
-      outline: none;
+    #mlb2-42470974.ml-form-embedContainer { background: transparent !important; }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-embedWrapper {
+      background: transparent !important; border: none !important; border-radius: 0 !important;
     }
-    .btn-guide { background: var(--accent); color: var(--white); border: 1px solid var(--accent); }
-    .btn-guide:hover { opacity: 0.85; }
-    .form-success { display: none; color: #b8d8c2; font-size: 0.92rem; margin-top: 1rem; }
-    .form-error { display: none; color: #e8a9a9; font-size: 0.88rem; margin-top: 1rem; }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-embedBody { padding: 0 !important; }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-embedContent { display: none !important; }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-formContent {
+      display: flex; gap: 0.7rem; flex-wrap: wrap; max-width: 540px; margin: 0 !important;
+    }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-fieldRow { flex: 1; min-width: 230px; margin: 0 !important; }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-fieldRow input[type="email"] {
+      background: var(--white) !important; border: 1px solid transparent !important;
+      border-radius: 2px !important; color: var(--ink) !important;
+      font-family: 'Inter', sans-serif !important; font-size: 0.92rem !important;
+      padding: 0.8rem 1.1rem !important; line-height: 1.4 !important; height: auto !important;
+    }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-embedSubmit {
+      flex-shrink: 0; margin: 0 !important; width: auto !important; float: none !important;
+    }
+    #mlb2-42470974.ml-form-embedContainer .ml-form-embedSubmit button.primary {
+      background: var(--accent) !important; border: 1px solid var(--accent) !important;
+      border-radius: 2px !important; color: var(--white) !important;
+      font-family: 'Inter', sans-serif !important; font-size: 0.9rem !important;
+      font-weight: 600 !important; padding: 0.8rem 1.4rem !important;
+      line-height: 1.4 !important; height: auto !important; white-space: nowrap;
+    }
+    .ml-form-successContent { color: #b8d8c2; }
+    .ml-form-successContent h4, .ml-form-successContent p { color: #b8d8c2 !important; }
 
     /* FIN */
     .fin { text-align: center; padding: 4.5rem 0; }
@@ -442,14 +458,39 @@
       <p class="label">Gratuit</p>
       <h2>Ce que personne ne vous explique avant d'utiliser l'IA.</h2>
       <p>5 situations concrètes du quotidien et 3 vérités que peu de gens connaissent. Indiquez votre email : vous recevrez le lien de téléchargement après confirmation.</p>
-      <form id="subscribe-form">
-        <div class="form-row">
-          <input type="email" id="email-input" placeholder="votre@email.fr" required />
-          <button type="submit" class="btn btn-guide">Recevoir le guide</button>
+      <div id="mlb2-42470974" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42470974">
+        <div class="ml-form-align-left">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent"></div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2424141/forms/189961966161233306/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="votre@email.fr" autocomplete="email">
+                    </div>
+                  </div>
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">Recevoir le guide</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Chargement...</span>
+                    </button>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display:none;">
+              <div class="ml-form-successContent">
+                <h4>Parfait. Vérifiez votre boîte mail.</h4>
+                <p>Un email de confirmation est en route. Une fois confirmé, vous recevez le lien du guide en moins de 5 minutes. Pensez à vérifier les spams.</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </form>
-      <p class="form-success" id="form-success">Parfait. Vérifiez votre boîte mail : un email de confirmation est en route. Une fois confirmé, vous recevez le lien du guide en moins de 5 minutes. Pensez à vérifier les spams.</p>
-      <p class="form-error" id="form-error">Une erreur s'est produite. Réessayez ou écrivez à contact@mathieugiroux.fr</p>
+      </div>
     </div>
   </section>
 
@@ -479,27 +520,14 @@
     </p>
   </footer>
 
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+  <script>fetch("https://assets.mailerlite.com/jsonp/2424141/forms/189961966161233306/takel")</script>
   <script>
-    document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email-input').value.trim();
-      const btn = this.querySelector('button[type="submit"]');
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.getElementById('email-input').focus();
-        document.getElementById('email-input').style.borderColor = '#c0392b';
-        return;
-      }
-      document.getElementById('email-input').style.borderColor = '';
-      btn.textContent = '...'; btn.disabled = true;
-      // Webhook actuel (chaîne Beehiiv). À remplacer par le formulaire MailerLite en Phase 4.
-      fetch('https://mg-n8n.fr/webhook/beehiiv-new-subscriber', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email })
-      }).catch(() => {});
-      document.getElementById('form-success').style.display = 'block';
-      this.style.display = 'none';
-    });
+    function ml_webform_success_42470974() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-42470974 .row-success').show();
+      $('.ml-subscribe-form-42470974 .row-form').hide();
+    }
   </script>
 
 </body>
