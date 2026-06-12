@@ -14,205 +14,198 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="IA pour Tous" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --paper: #faf8f4;
-      --ink: #1c1a17;
-      --body: #3a362f;
-      --muted: #6a645a;
-      --rule: #e4ddd1;
-      --accent: #8a3033;
-      --white: #fffdf9;
+      --bg: #ffffff;
+      --ink: #101113;
+      --body: #3c3e42;
+      --muted: #74767c;
+      --line: #e9eaec;
+      --accent: #2244cc;
+      --soft: #f6f7f8;
     }
 
     html { scroll-behavior: smooth; font-size: 17px; }
 
     body {
-      background: var(--paper);
+      background: var(--bg);
       color: var(--body);
       font-family: 'Inter', system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
-    .wrap { max-width: 1020px; margin: 0 auto; padding: 0 1.5rem; }
-    .wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
 
     /* NAV */
-    header {
-      border-bottom: 1px solid var(--rule);
-      background: var(--paper);
-    }
+    header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(255,255,255,0.94); backdrop-filter: blur(8px); z-index: 50; }
     .nav {
-      max-width: 1020px; margin: 0 auto; padding: 1.1rem 1.5rem;
-      display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+      max-width: 1040px; margin: 0 auto; padding: 1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
     }
-    .nav-name { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
-    .nav-name span { color: var(--muted); font-weight: 500; }
-    .nav-links { display: flex; gap: 1.75rem; align-items: baseline; }
-    .nav-links a { font-size: 0.85rem; color: var(--body); text-decoration: none; font-weight: 500; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-links a.strong { color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+    .nav-name { font-weight: 700; font-size: 0.98rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+    .nav-links a { font-size: 0.86rem; color: var(--body); text-decoration: none; font-weight: 500; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.btn-nav {
+      background: var(--ink); color: white; font-weight: 600;
+      padding: 0.5rem 1.1rem; border-radius: 6px;
+    }
+    .nav-links a.btn-nav:hover { opacity: 0.85; color: white; }
 
     /* HERO */
-    .hero { padding: 5rem 0 4.5rem; border-bottom: 1px solid var(--rule); }
-    .hero-grid {
-      display: grid; grid-template-columns: 1.25fr 0.75fr;
-      gap: 4rem; align-items: center;
-    }
-    .eyebrow {
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 1.5rem;
+    .hero { padding: 6.5rem 0 5rem; text-align: center; }
+    .overline {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted);
+      border: 1px solid var(--line); border-radius: 4px;
+      padding: 0.35rem 0.8rem;
+      margin-bottom: 2rem;
     }
     h1 {
-      font-family: 'Spectral', serif;
-      font-size: clamp(2rem, 4.6vw, 3.1rem);
-      font-weight: 600; line-height: 1.18;
-      letter-spacing: -0.01em; color: var(--ink);
-      margin-bottom: 1.4rem;
+      font-size: clamp(2.3rem, 5.4vw, 3.9rem);
+      font-weight: 800; line-height: 1.08;
+      letter-spacing: -0.035em; color: var(--ink);
+      margin: 0 auto 1.5rem; max-width: 21ch;
     }
-    .hero-sub { font-size: 1.02rem; color: var(--body); max-width: 52ch; margin-bottom: 2.2rem; }
-    .btn-row { display: flex; gap: 0.85rem; flex-wrap: wrap; align-items: center; }
+    .hero-sub { font-size: 1.05rem; color: var(--body); max-width: 56ch; margin: 0 auto 2.4rem; }
+    .btn-row { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; align-items: center; }
     .btn {
       display: inline-block; text-decoration: none; cursor: pointer;
-      font-size: 0.92rem; font-weight: 600; font-family: 'Inter', sans-serif;
-      padding: 0.8rem 1.6rem; border-radius: 2px;
+      font-size: 0.93rem; font-weight: 600; font-family: 'Inter', sans-serif;
+      padding: 0.85rem 1.7rem; border-radius: 6px;
       transition: opacity 0.15s, background 0.15s;
     }
-    .btn-primary { background: var(--ink); color: var(--white); border: 1px solid var(--ink); }
+    .btn-primary { background: var(--ink); color: white; border: 1px solid var(--ink); }
     .btn-primary:hover { opacity: 0.85; }
-    .btn-secondary { background: transparent; color: var(--ink); border: 1px solid #b9b0a0; }
-    .btn-secondary:hover { background: rgba(0,0,0,0.04); }
-    .hero-note { font-size: 0.82rem; color: var(--muted); margin-top: 1.1rem; }
-    .hero-note b { color: var(--accent); font-weight: 600; }
-
-    .hero-cover { text-align: center; }
+    .btn-secondary { background: white; color: var(--ink); border: 1px solid #cfd1d6; }
+    .btn-secondary:hover { background: var(--soft); }
+    .hero-note { font-size: 0.82rem; color: var(--muted); margin-top: 1.2rem; }
+    .hero-note b { color: var(--ink); font-weight: 600; }
+    .hero-cover { margin-top: 3.5rem; }
     .hero-cover img {
-      width: min(250px, 60vw);
-      border: 1px solid var(--rule);
-      box-shadow: 0 14px 34px rgba(40,30,15,0.16);
+      width: min(230px, 58vw);
+      border-radius: 4px;
+      box-shadow: 0 24px 60px rgba(16,17,19,0.16), 0 4px 14px rgba(16,17,19,0.08);
     }
-    .hero-cover figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
+    .hero-cover figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 1.1rem; }
 
     /* AVIS */
-    .avis { padding: 3.2rem 0; border-bottom: 1px solid var(--rule); background: var(--white); }
-    .avis-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
-    .avis-item { padding: 0 2rem; border-left: 1px solid var(--rule); }
-    .avis-item:first-child { border-left: none; padding-left: 0; }
-    .stars { color: var(--accent); font-size: 0.8rem; letter-spacing: 0.18em; margin-bottom: 0.7rem; }
-    .avis-quote { font-family: 'Spectral', serif; font-size: 1.04rem; line-height: 1.5; color: var(--ink); margin-bottom: 0.7rem; }
+    .avis { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--soft); padding: 2.8rem 0; }
+    .avis-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem; }
+    .stars { color: var(--ink); font-size: 0.78rem; letter-spacing: 0.2em; margin-bottom: 0.6rem; }
+    .avis-quote { font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.5; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
     .avis-meta { font-size: 0.76rem; color: var(--muted); }
 
     /* SECTIONS */
-    section.block { padding: 4.5rem 0; border-bottom: 1px solid var(--rule); }
+    section.block { padding: 5.5rem 0; }
+    section.block + section.block { border-top: 1px solid var(--line); }
     .label {
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--muted);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.6rem;
     }
     h2 {
-      font-family: 'Spectral', serif;
-      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
-      font-weight: 600; line-height: 1.25; color: var(--ink);
-      letter-spacing: -0.01em;
+      font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+      font-weight: 750; line-height: 1.15; color: var(--ink);
+      letter-spacing: -0.025em;
     }
 
     /* APPRENDRE */
-    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3.5rem; }
-    .learn-item { padding: 1.6rem 0; border-top: 1px solid var(--rule); }
-    .learn-num { font-family: 'Spectral', serif; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
-    .learn-title { font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.45; margin-bottom: 0.35rem; }
+    .learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .learn-item { padding: 1.8rem; border: 1px solid var(--line); border-radius: 10px; background: white; }
+    .learn-num { font-size: 0.75rem; font-weight: 700; color: var(--accent); margin-bottom: 0.7rem; letter-spacing: 0.08em; }
+    .learn-title { font-size: 1rem; font-weight: 650; color: var(--ink); line-height: 1.4; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
     .learn-desc { font-size: 0.9rem; color: var(--body); }
 
     /* LIVRES */
-    .books { background: var(--white); }
+    .books-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
     .book-card {
-      display: grid; grid-template-columns: 130px 1fr; gap: 2.2rem;
-      padding: 2.2rem 0; border-top: 1px solid var(--rule);
-      align-items: center;
+      border: 1px solid var(--line); border-radius: 12px; background: white;
+      padding: 2rem; display: flex; flex-direction: column; gap: 1.1rem;
     }
-    .book-card img { width: 130px; border: 1px solid var(--rule); box-shadow: 0 8px 20px rgba(40,30,15,0.12); }
-    .book-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
-    .book-title { font-family: 'Spectral', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 0.5rem; }
-    .book-desc { font-size: 0.93rem; margin-bottom: 1rem; max-width: 58ch; }
-    .book-buy { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
-    .book-price { font-size: 0.85rem; color: var(--muted); }
-    .next-list { margin-top: 2.5rem; }
+    .book-top { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .book-top img { width: 104px; border-radius: 3px; box-shadow: 0 8px 20px rgba(16,17,19,0.12); }
+    .book-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.45rem; }
+    .book-title { font-size: 1.12rem; font-weight: 700; color: var(--ink); line-height: 1.3; letter-spacing: -0.015em; margin-bottom: 0.4rem; }
+    .book-price { font-size: 0.82rem; color: var(--muted); }
+    .book-desc { font-size: 0.92rem; }
+    .book-card .btn { align-self: flex-start; }
+    .next-list { margin-top: 2.6rem; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    .next-head { padding: 1rem 1.6rem; background: var(--soft); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
     .next-row {
       display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-      padding: 0.85rem 0; border-top: 1px solid var(--rule);
+      padding: 1rem 1.6rem; border-top: 1px solid var(--line);
     }
-    .next-row p { font-size: 0.95rem; color: var(--body); }
-    .next-row p b { color: var(--ink); font-weight: 600; }
-    .next-row span { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+    .next-row p { font-size: 0.93rem; }
+    .next-row p b { color: var(--ink); font-weight: 650; }
+    .next-row span { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
 
     /* POUR QUI */
-    .pq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
-    .pq-col h3 { font-family: 'Spectral', serif; font-size: 1.25rem; font-weight: 600; color: var(--ink); margin-bottom: 1.2rem; }
+    .pq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .pq-col { border: 1px solid var(--line); border-radius: 12px; padding: 2rem; }
+    .pq-col.oui { background: var(--soft); }
+    .pq-col h3 { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 1.1rem; letter-spacing: -0.01em; }
     .pq-col ul { list-style: none; }
-    .pq-col li { padding: 0.55rem 0 0.55rem 1.4rem; position: relative; font-size: 0.95rem; border-top: 1px solid var(--rule); }
-    .pq-col li::before { content: '·'; position: absolute; left: 0.2rem; color: var(--accent); font-weight: 700; }
-    .pq-col.non li::before { color: var(--muted); }
+    .pq-col li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; font-size: 0.93rem; }
+    .pq-col.oui li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+    .pq-col.non li::before { content: '·'; position: absolute; left: 0.3rem; color: var(--muted); font-weight: 700; }
 
     /* AUTEUR */
-    .auteur-grid { display: grid; grid-template-columns: 110px 1fr; gap: 2.5rem; align-items: start; }
+    .auteur-grid { display: grid; grid-template-columns: 96px 1fr; gap: 2.2rem; align-items: start; }
     .monogram {
-      width: 100px; height: 100px; border: 1px solid var(--ink);
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--ink); color: white;
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Spectral', serif; font-size: 2.4rem; font-weight: 600; color: var(--ink);
+      font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em;
     }
-    .auteur-name { font-family: 'Spectral', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); margin-bottom: 0.8rem; }
-    .auteur-text { font-size: 0.98rem; max-width: 62ch; }
+    .auteur-name { font-size: 1.35rem; font-weight: 750; color: var(--ink); margin-bottom: 0.7rem; letter-spacing: -0.02em; }
+    .auteur-text { font-size: 0.97rem; max-width: 62ch; }
 
     /* GUIDE */
-    .guide { background: var(--ink); border-bottom: none; }
-    .guide .label { color: rgba(255,253,249,0.5); }
-    .guide h2 { color: var(--white); margin-bottom: 1rem; }
-    .guide p { color: rgba(255,253,249,0.75); font-size: 0.97rem; max-width: 56ch; margin-bottom: 2rem; }
-    .form-row { display: flex; gap: 0.7rem; flex-wrap: wrap; max-width: 540px; }
+    .guide { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; }
+    .guide h2 { margin-bottom: 1rem; }
+    .guide p { font-size: 0.97rem; max-width: 54ch; margin: 0 auto 2.2rem; }
+    .form-row { display: flex; gap: 0.7rem; flex-wrap: wrap; max-width: 520px; margin: 0 auto; justify-content: center; }
     .form-row input {
       flex: 1; min-width: 230px;
-      background: var(--white); border: 1px solid transparent;
-      color: var(--ink); padding: 0.8rem 1.1rem;
-      border-radius: 2px; font-size: 0.92rem; font-family: 'Inter', sans-serif;
-      outline: none;
+      background: white; border: 1px solid #cfd1d6;
+      color: var(--ink); padding: 0.85rem 1.15rem;
+      border-radius: 6px; font-size: 0.92rem; font-family: 'Inter', sans-serif;
+      outline: none; transition: border-color 0.15s;
     }
-    .btn-guide { background: var(--accent); color: var(--white); border: 1px solid var(--accent); }
-    .btn-guide:hover { opacity: 0.85; }
-    .form-success { display: none; color: #b8d8c2; font-size: 0.92rem; margin-top: 1rem; }
-    .form-error { display: none; color: #e8a9a9; font-size: 0.88rem; margin-top: 1rem; }
+    .form-row input:focus { border-color: var(--ink); }
+    .form-success { display: none; color: #21693c; font-size: 0.92rem; margin-top: 1rem; }
+    .form-error { display: none; color: #b03434; font-size: 0.88rem; margin-top: 1rem; }
 
     /* FIN */
-    .fin { text-align: center; padding: 4.5rem 0; }
+    .fin { text-align: center; }
     .fin h2 { margin-bottom: 1.8rem; }
 
-    footer { border-top: 1px solid var(--rule); padding: 1.8rem 0; }
+    footer { border-top: 1px solid var(--line); padding: 1.8rem 0 0; }
     .foot-inner {
-      max-width: 1020px; margin: 0 auto; padding: 0 1.5rem;
+      max-width: 1040px; margin: 0 auto; padding: 0 1.5rem 1rem;
       display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
       font-size: 0.8rem; color: var(--muted);
     }
     .foot-inner a { color: var(--muted); text-decoration: none; }
-    .foot-inner a:hover { color: var(--accent); }
-    .mentions { font-size: 0.72rem; color: #a39b8d; padding: 0 1.5rem 2rem; max-width: 1020px; margin: 0 auto; line-height: 1.7; }
+    .foot-inner a:hover { color: var(--ink); }
+    .mentions { font-size: 0.72rem; color: #9b9da3; padding: 0 1.5rem 2rem; max-width: 1040px; margin: 0 auto; line-height: 1.7; }
 
     @media (max-width: 800px) {
-      .nav { padding: 1rem 1.25rem; }
-      .nav-name span { display: none; }
-      .nav-links { gap: 1.1rem; }
-      .nav-links a:first-child { display: none; }
-      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-cover { order: -1; }
-      .avis-grid { grid-template-columns: 1fr; gap: 1.8rem; }
-      .avis-item { border-left: none; padding: 0; }
+      .nav { padding: 0.9rem 1.25rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a:nth-child(2) { display: none; }
+      .hero { padding: 4.5rem 0 4rem; }
+      .avis-grid { grid-template-columns: 1fr; gap: 1.6rem; }
       .learn-grid { grid-template-columns: 1fr; }
-      .pq-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .book-card { grid-template-columns: 100px 1fr; gap: 1.4rem; }
-      .auteur-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .books-grid { grid-template-columns: 1fr; }
+      .pq-grid { grid-template-columns: 1fr; }
+      .auteur-grid { grid-template-columns: 1fr; gap: 1.4rem; }
     }
   </style>
   <script type="application/ld+json">
@@ -256,11 +249,11 @@
 
   <header>
     <div class="nav">
-      <a class="nav-name" href="/">Mathieu Giroux <span>· IA pour Tous</span></a>
+      <a class="nav-name" href="/">Mathieu Giroux</a>
       <div class="nav-links">
         <a href="/blog">Blog</a>
         <a href="#guide">Guide gratuit</a>
-        <a class="strong" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Le livre sur Amazon</a>
+        <a class="btn-nav" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Le livre sur Amazon</a>
       </div>
     </div>
   </header>
@@ -268,28 +261,24 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">La série de livres IA pour Tous</p>
-          <h1>Comprendre et utiliser l'IA, sans coder, sans jargon.</h1>
-          <p class="hero-sub">
-            Je suis conseiller numérique. Chaque semaine, j'accompagne des personnes qui découvrent
-            l'intelligence artificielle. Ces livres racontent ce qu'elles vivent vraiment,
-            et ce que ça apprend sur la bonne façon de s'en servir.
-          </p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Acheter le livre 1 · 6,99 €</a>
-            <a class="btn btn-secondary" href="#guide">Recevoir le guide gratuit</a>
-          </div>
-          <p class="hero-note"><b>5/5 sur Amazon</b> · Kindle et broché · Lisible sur n'importe quel téléphone</p>
-        </div>
-        <figure class="hero-cover">
-          <a href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">
-            <img src="public/L1-card.jpg" alt="Couverture du livre IA pour Tous : Comprendre et utiliser l'intelligence artificielle sans coder" />
-          </a>
-          <figcaption>Livre 1 · 110 pages · Publié en avril 2026</figcaption>
-        </figure>
+      <span class="overline">La série de livres IA pour Tous</span>
+      <h1>Comprendre et utiliser l'IA, sans coder, sans jargon.</h1>
+      <p class="hero-sub">
+        Je suis conseiller numérique. Chaque semaine, j'accompagne des personnes qui découvrent
+        l'intelligence artificielle. Ces livres racontent ce qu'elles vivent vraiment,
+        et ce que ça apprend sur la bonne façon de s'en servir.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Acheter le livre 1 · 6,99 €</a>
+        <a class="btn btn-secondary" href="#guide">Recevoir le guide gratuit</a>
       </div>
+      <p class="hero-note"><b>5/5 sur Amazon</b> · Kindle et broché · Lisible sur n'importe quel téléphone</p>
+      <figure class="hero-cover">
+        <a href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">
+          <img src="public/L1-card.jpg" alt="Couverture du livre IA pour Tous : Comprendre et utiliser l'intelligence artificielle sans coder" />
+        </a>
+        <figcaption>Livre 1 · 110 pages · Publié en avril 2026</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -297,17 +286,17 @@
   <section class="avis">
     <div class="wrap">
       <div class="avis-grid">
-        <div class="avis-item">
+        <div>
           <p class="stars">★★★★★</p>
           <p class="avis-quote">"Enfin un ouvrage simple, accessible à tout le monde."</p>
           <p class="avis-meta">Avis Amazon vérifié · mai 2026</p>
         </div>
-        <div class="avis-item">
+        <div>
           <p class="stars">★★★★★</p>
           <p class="avis-quote">"Simple, concret, efficace."</p>
           <p class="avis-meta">Avis Amazon vérifié · mai 2026</p>
         </div>
-        <div class="avis-item">
+        <div>
           <p class="stars">★★★★★</p>
           <p class="avis-quote">"Vivement les suivants !"</p>
           <p class="avis-meta">Avis Amazon vérifié · mai 2026</p>
@@ -346,42 +335,41 @@
   </section>
 
   <!-- LIVRES -->
-  <section class="block books">
+  <section class="block">
     <div class="wrap">
       <p class="label">Les livres</p>
-
-      <div class="book-card">
-        <a href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">
-          <img src="public/L1-card.jpg" alt="Livre 1 : Comprendre et utiliser l'intelligence artificielle sans coder" />
-        </a>
-        <div>
-          <p class="book-tag">Livre 1 · Disponible</p>
-          <p class="book-title">Comprendre et utiliser l'intelligence artificielle sans coder</p>
+      <div class="books-grid">
+        <div class="book-card">
+          <div class="book-top">
+            <a href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">
+              <img src="public/L1-card.jpg" alt="Livre 1 : Comprendre et utiliser l'intelligence artificielle sans coder" />
+            </a>
+            <div>
+              <p class="book-tag">Livre 1 · Disponible</p>
+              <p class="book-title">Comprendre et utiliser l'intelligence artificielle sans coder</p>
+              <p class="book-price">Kindle 6,99 € · Broché 13,99 €</p>
+            </div>
+          </div>
           <p class="book-desc">Le point de départ. Ce que l'IA change au quotidien, raconté à travers des situations réelles, pour démarrer même en partant de zéro.</p>
-          <div class="book-buy">
-            <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Acheter sur Amazon</a>
-            <span class="book-price">Kindle 6,99 € · Broché 13,99 €</span>
-          </div>
+          <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Acheter sur Amazon</a>
         </div>
-      </div>
-
-      <div class="book-card">
-        <a href="https://www.amazon.fr/dp/B0H353RTPC" target="_blank" rel="noopener">
-          <img src="public/L2-card.jpg" alt="Livre 2 : Prompter comme un pro" />
-        </a>
-        <div>
-          <p class="book-tag">Livre 2 · Disponible</p>
-          <p class="book-title">Prompter comme un pro</p>
+        <div class="book-card">
+          <div class="book-top">
+            <a href="https://www.amazon.fr/dp/B0H353RTPC" target="_blank" rel="noopener">
+              <img src="public/L2-card.jpg" alt="Livre 2 : Prompter comme un pro" />
+            </a>
+            <div>
+              <p class="book-tag">Livre 2 · Disponible</p>
+              <p class="book-title">Prompter comme un pro</p>
+              <p class="book-price">Kindle 7,99 € · Broché 13,99 €</p>
+            </div>
+          </div>
           <p class="book-desc">Vous obtenez des réponses correctes, mais rarement exactement ce que vous vouliez. Ce livre change la façon dont vous formulez chaque demande.</p>
-          <div class="book-buy">
-            <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0H353RTPC" target="_blank" rel="noopener">Acheter sur Amazon</a>
-            <span class="book-price">Kindle 7,99 € · Broché 13,99 €</span>
-          </div>
+          <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0H353RTPC" target="_blank" rel="noopener">Acheter sur Amazon</a>
         </div>
       </div>
-
       <div class="next-list">
-        <p class="label" style="margin-bottom:1rem;">La suite de la série</p>
+        <p class="next-head">La suite de la série</p>
         <div class="next-row"><p><b>Donner du contexte à l'IA</b> · obtenir des réponses précises en expliquant mieux votre situation</p><span>À paraître</span></div>
         <div class="next-row"><p><b>50 cas d'usage du quotidien</b> · des applications concrètes, une par besoin réel</p><span>À paraître</span></div>
         <div class="next-row"><p><b>Choisir et comparer les IA</b> · ChatGPT, Claude, Gemini : laquelle pour quoi</p><span>À paraître</span></div>
@@ -395,7 +383,7 @@
     <div class="wrap">
       <p class="label">Pour qui ?</p>
       <div class="pq-grid">
-        <div class="pq-col">
+        <div class="pq-col oui">
           <h3>Ces livres sont pour vous.</h3>
           <ul>
             <li>Vous avez essayé l'IA et obtenu des résultats décevants</li>
@@ -445,7 +433,7 @@
       <form id="subscribe-form">
         <div class="form-row">
           <input type="email" id="email-input" placeholder="votre@email.fr" required />
-          <button type="submit" class="btn btn-guide">Recevoir le guide</button>
+          <button type="submit" class="btn btn-primary">Recevoir le guide</button>
         </div>
       </form>
       <p class="form-success" id="form-success">Parfait. Vérifiez votre boîte mail : un email de confirmation est en route. Une fois confirmé, vous recevez le lien du guide en moins de 5 minutes. Pensez à vérifier les spams.</p>
@@ -454,10 +442,10 @@
   </section>
 
   <!-- FIN -->
-  <section class="fin">
+  <section class="block fin">
     <div class="wrap">
       <h2>Commencez par le livre 1.</h2>
-      <div class="btn-row" style="justify-content:center;">
+      <div class="btn-row">
         <a class="btn btn-primary" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">Acheter sur Amazon · 6,99 €</a>
         <a class="btn btn-secondary" href="#guide">Recevoir le guide gratuit</a>
       </div>
@@ -486,7 +474,7 @@
       const btn = this.querySelector('button[type="submit"]');
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         document.getElementById('email-input').focus();
-        document.getElementById('email-input').style.borderColor = '#c0392b';
+        document.getElementById('email-input').style.borderColor = '#b03434';
         return;
       }
       document.getElementById('email-input').style.borderColor = '';

@@ -1,0 +1,15 @@
+# Local Netlify folder
+.netlify
+
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Scripts locaux
+deploy.sh
+
+# Fichiers temporaires
+index (1).html
