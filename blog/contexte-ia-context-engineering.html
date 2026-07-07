@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment donner du contexte à l'IA : la méthode pour de meilleures réponses</title>
+  <meta name="description" content="Donner du contexte à l'IA change tout à la qualité des réponses. Découvrez ce qu'est le context engineering et quatre habitudes simples pour l'appliquer dès aujourd'hui." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mathieugiroux.fr/blog/contexte-ia-context-engineering.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comment donner du contexte à l'IA : la méthode pour de meilleures réponses",
+    "description": "Donner du contexte à l'IA change tout à la qualité des réponses. Découvrez ce qu'est le context engineering et quatre habitudes simples pour l'appliquer dès aujourd'hui.",
+    "author": { "@type": "Person", "name": "Mathieu Giroux" },
+    "publisher": { "@type": "Organization", "name": "IA pour Tous" },
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04"
+  }
+  </script>
+
+  <!-- Schema.org FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que donner du contexte à l'IA ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Donner du contexte à l'IA, c'est lui fournir les informations dont elle a besoin pour répondre correctement : qui vous êtes, dans quelle situation vous vous trouvez, quelle contrainte s'applique, quel ton vous attendez. Sans ce contexte, l'IA devine, et ses suppositions sont souvent à côté." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre un prompt et un contexte ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Un prompt dit à l'IA comment faire quelque chose : formuler une demande, poser une question, donner des instructions. Le contexte lui dit dans quelle situation elle se trouve : vos préférences, votre historique, vos contraintes, vos documents. Les deux sont utiles, mais le contexte est souvent ce qui manque quand les résultats déçoivent." }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce que le context engineering ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Le context engineering, ou ingénierie du contexte, est la discipline qui consiste à préparer et organiser les informations que vous transmettez à l'IA. Ce n'est pas une compétence technique : c'est une façon de penser ce que vous mettez dans vos échanges pour que le modèle dispose de ce qu'il lui faut." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment améliorer les réponses de l'IA sans changer son prompt ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Commencez une nouvelle conversation quand vous changez de sujet. Copiez-collez uniquement la partie du document qui est utile. Donnez vos contraintes dès le début (budget, délai, public cible). Répétez les contraintes importantes si la conversation devient longue. Ces quatre habitudes améliorent la qualité des réponses sans toucher à la formulation de vos demandes." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf9f7;
+      --black: #111110;
+      --grey: #6b6b6b;
+      --light-grey: #e8e6e2;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { background: var(--cream); color: var(--black); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--light-grey); position: sticky; top: 0; background: var(--cream); z-index: 100; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; text-decoration: none; color: var(--black); }
+    .nav-cta { background: var(--black); color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ARTICLE */
+    .article-container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--grey); margin-bottom: 2rem; }
+    .breadcrumb a { color: var(--grey); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--black); }
+
+    .article-meta { font-size: 0.8rem; color: var(--grey); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+
+    .article-intro { font-size: 1.1rem; color: var(--grey); line-height: 1.8; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-grey); }
+
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 1.8rem 0 0.6rem; }
+    p { margin-bottom: 1.2rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.6rem; }
+
+    .encadre { background: white; border: 1px solid var(--light-grey); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .encadre-titre { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; color: var(--grey); }
+
+    .faq { margin-top: 2.5rem; }
+    .faq-item { border-top: 1px solid var(--light-grey); padding: 1.2rem 0; }
+    .faq-q { font-weight: 600; margin-bottom: 0.5rem; }
+    .faq-a { color: var(--grey); font-size: 0.95rem; }
+
+    .cta-block { background: var(--black); color: white; border-radius: 12px; padding: 2.5rem; margin: 3rem 0; text-align: center; }
+    .cta-block h3 { color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-white { background: white; color: var(--black); padding: 0.8rem 2rem; border-radius: 2rem; font-weight: 600; text-decoration: none; font-size: 0.95rem; display: inline-block; }
+    .btn-white:hover { opacity: 0.9; }
+
+    a { color: var(--black); }
+    a:hover { opacity: 0.65; }
+    .related-articles { border-top: 1px solid var(--light-grey); margin-top: 3rem; padding-top: 2rem; }
+    .related-articles h3 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey); margin-bottom: 1rem; }
+    .related-link { display: block; padding: 1rem 0; border-bottom: 1px solid var(--light-grey); text-decoration: none; color: var(--black); font-weight: 500; }
+    .related-link:hover { opacity: 0.65; }
+    footer { border-top: 1px solid var(--light-grey); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--grey); }
+    footer a { color: var(--grey); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">IA pour Tous .</a>
+  <a class="nav-cta" href="/#chapitres-gratuits">Guide gratuit</a>
+</nav>
+
+<article class="article-container">
+
+  <div class="breadcrumb">
+    <a href="/">Accueil</a> › <a href="/blog/">Blog</a> › Donner du contexte à l'IA
+  </div>
+
+  <p class="article-meta">Mathieu Giroux · 4 juillet 2026 · 7 min de lecture</p>
+
+  <h1>Comment donner du contexte à l'IA : la méthode pour de meilleures réponses</h1>
+
+  <p class="article-intro">
+    Dans mes ateliers, une situation revient régulièrement : quelqu'un essaie l'IA, obtient une réponse décevante, et conclut que l'outil ne sert à rien. En regardant ses échanges, le problème vient rarement de la façon dont la question est posée. C'est ce que l'IA ne sait pas sur la situation qui manque. Donner du contexte à l'IA, c'est cette compétence-là, la plus sous-estimée, et souvent la plus efficace.
+  </p>
+
+  <!-- CTA MINI -->
+  <div style="background:white; border:1px solid var(--light-grey); border-radius:8px; padding:1.2rem 1.5rem; margin:2rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <p style="margin:0; font-size:0.95rem;">Vous débutez avec l'IA ? Mon guide gratuit vous accompagne pas à pas.</p>
+    <a href="/#chapitres-gratuits" style="background:var(--black); color:white; padding:0.6rem 1.4rem; border-radius:2rem; font-size:0.85rem; font-weight:600; text-decoration:none; white-space:nowrap;">Télécharger</a>
+  </div>
+
+  <h2>Ce que l'IA voit vraiment quand vous lui écrivez</h2>
+
+  <p>Beaucoup de gens pensent que l'IA ne lit que leur dernière question. Ce n'est pas ce qui se passe. Quand vous envoyez un message, le modèle reçoit l'intégralité de ce qu'on appelle sa <strong>fenêtre de contexte</strong> : votre message, toute la conversation depuis le début, les instructions que vous avez pu configurer en amont, et les documents que vous avez joints.</p>
+
+  <p>Imaginez un bureau physique. Au début de la journée, il est vide. Vous posez vos dossiers, vos notes, vos documents de référence. La surface se remplit progressivement. Si vous continuez d'empiler sans trier, vous passez plus de temps à chercher dans le désordre qu'à travailler. La fenêtre de contexte fonctionne exactement comme ça : limitée en taille, active à chaque échange.</p>
+
+  <p>Ce que ça signifie en pratique : ce que vous mettez dans cette fenêtre, et la façon dont vous le mettez, détermine la qualité des réponses bien au-delà de la formulation de vos questions.</p>
+
+  <h2>Prompt et contexte : deux choses très différentes</h2>
+
+  <p>On parle beaucoup du prompt, c'est-à-dire la façon dont vous formulez votre demande. C'est utile, et j'y consacre d'ailleurs un article entier. Mais le prompt dit à l'IA <em>comment faire</em> quelque chose. Le contexte lui dit <em>dans quelle situation</em> elle est en train de le faire. Sur des tâches simples et ponctuelles, le prompt seul suffit. Sur des tâches plus ambitieuses, le contexte devient déterminant.</p>
+
+  <p>Un exemple concret : vous voulez que l'IA vous aide à répondre à vos emails professionnels. Vous pouvez écrire un prompt excellent, avec le ton voulu, la longueur souhaitée, le registre précis. Mais si l'IA ne sait pas qui sont vos interlocuteurs habituels, quel est votre secteur d'activité, ou quel ton vous utilisez avec votre hiérarchie, elle devine. Et ses suppositions seront souvent à côté.</p>
+
+  <p>C'est la discipline qu'on appelle le <strong>context engineering</strong>, ou ingénierie du contexte. Pas une compétence technique, mais une façon de penser ce que vous transmettez à l'IA pour qu'elle dispose de ce qu'il lui faut pour bien travailler.</p>
+
+  <h2>Les trois erreurs qui plombent vos résultats</h2>
+
+  <p>Les équipes de recherche qui étudient les défaillances des IA identifient trois modes d'échec liés au contexte. Les voici, traduits en situations concrètes.</p>
+
+  <h3>Pas assez d'informations</h3>
+  <p>L'IA ne dispose pas de ce qu'il lui faut pour répondre correctement. Elle comble les lacunes par des suppositions, parfois par des inventions. C'est l'une des causes racines des hallucinations : le modèle ne sait pas, alors il invente avec assurance. Lui donner les bons éléments dès le départ réduit ce risque de façon significative.</p>
+
+  <h3>Trop d'informations non filtrées</h3>
+  <p>L'excès de contexte produit l'effet inverse de ce qu'on attend. Quand la fenêtre est encombrée, l'attention du modèle se dilue. Les réponses deviennent moins précises, moins ciblées, même si l'IA n'a techniquement rien oublié. Ce phénomène porte le nom de <em>context rot</em>, la pourriture de contexte : une dégradation progressive de la qualité à mesure que les échanges s'accumulent sans être épurés.</p>
+
+  <h3>Des informations qui se contredisent</h3>
+  <p>Vous avez mentionné en début de conversation que le budget est de 5 000 euros, puis trois échanges plus tard vous parlez de 8 000 sans préciser. L'IA voit les deux chiffres. Elle doit choisir, et parfois elle produit une réponse incohérente qui mélange les deux. Des informations contradictoires dans un même échange génèrent des résultats instables, difficiles à corriger sans repartir de zéro.</p>
+
+  <div class="encadre">
+    <p class="encadre-titre">À retenir</p>
+    <ul>
+      <li>L'IA voit tout votre échange, pas seulement votre dernière question.</li>
+      <li>Le contexte dit à l'IA ce qu'elle doit savoir sur votre situation, pas comment vous lui posez la question.</li>
+      <li>Trop peu de contexte génère des inventions. Trop d'informations non filtrées dilue la précision. Des contradictions produisent des incohérences.</li>
+      <li>Commencez une nouvelle conversation quand vous changez de sujet.</li>
+    </ul>
+  </div>
+
+  <h2>Quatre habitudes concrètes à adopter dès aujourd'hui</h2>
+
+  <p>Pas besoin de maîtriser l'ingénierie de contexte dans le détail pour en tirer parti. Ces quatre réflexes simples améliorent la qualité des réponses sans changer votre façon de formuler les questions.</p>
+
+  <ol>
+    <li><strong>Commencez une conversation fraîche quand vous changez de sujet.</strong> L'historique du sujet précédent est du bruit pour le nouveau. Une conversation par projet ou par tâche, c'est le point de départ le plus simple et le plus efficace.</li>
+    <li><strong>Ne collez que ce qui est utile.</strong> Si vous avez un long document mais que seule une section vous concerne, copiez-collez uniquement cette partie. Résumez le reste en deux lignes. Moins de texte inutile dans la fenêtre, meilleure est la précision.</li>
+    <li><strong>Donnez vos contraintes dès le début.</strong> Budget, délai, public cible, ton voulu, format attendu. Tout ce que vous posez dès le départ, l'IA n'aura pas à le deviner. Ce qui n'est pas dit sera supposé, parfois correctement, souvent non.</li>
+    <li><strong>Répétez les points importants dans les échanges longs.</strong> Si votre conversation dure depuis de nombreux messages, rappelez l'essentiel : « Pour rappel, le budget est de X et l'audience est composée de débutants. » Ça recale la fenêtre sur ce qui compte.</li>
+  </ol>
+
+  <div class="cta-block">
+    <h3>Pour aller plus loin</h3>
+    <p>Le context engineering fait l'objet du volume 3 de la série « IA pour Tous ». J'y détaille tous les mécanismes et les techniques, sans code, avec des exercices issus de la pratique. Les trois volumes sont disponibles sur Amazon.</p>
+    <a class="btn-white" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener">L1 : "IA pour Tous" sur Amazon</a>
+    <a class="btn-white" href="https://www.amazon.fr/dp/B0H353RTPC" target="_blank" rel="noopener" style="margin-top:0.6rem;">L2 : "Prompter comme un pro" sur Amazon</a>
+    <a class="btn-white" href="https://www.amazon.fr/dp/B0H6HQLGGH" target="_blank" rel="noopener" style="margin-top:0.6rem;">L3 : "Ingénierie du contexte" sur Amazon</a>
+  </div>
+
+  <div class="faq">
+    <h2 id="faq">Questions fréquentes sur le contexte et l'IA</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">Qu'est-ce que donner du contexte à l'IA ?</p>
+      <p class="faq-a">Donner du contexte à l'IA, c'est lui fournir les informations dont elle a besoin pour répondre correctement : qui vous êtes, dans quelle situation vous vous trouvez, quelle contrainte s'applique, quel ton vous attendez. Sans ce contexte, l'IA devine, et ses suppositions sont souvent à côté.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Quelle est la différence entre un prompt et un contexte ?</p>
+      <p class="faq-a">Un prompt dit à l'IA comment faire quelque chose : formuler une demande, poser une question, donner des instructions. Le contexte lui dit dans quelle situation elle se trouve : vos préférences, votre historique, vos contraintes, vos documents. Les deux sont utiles, mais le contexte est souvent ce qui manque quand les résultats déçoivent.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Qu'est-ce que le context engineering ?</p>
+      <p class="faq-a">Le context engineering, ou ingénierie du contexte, est la discipline qui consiste à préparer et organiser les informations que vous transmettez à l'IA. Ce n'est pas une compétence technique : c'est une façon de penser ce que vous mettez dans vos échanges pour que le modèle dispose de ce qu'il lui faut.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Comment améliorer les réponses de l'IA sans changer son prompt ?</p>
+      <p class="faq-a">Commencez une nouvelle conversation quand vous changez de sujet. Copiez-collez uniquement la partie du document qui est utile. Donnez vos contraintes dès le début (budget, délai, public cible). Répétez les contraintes importantes si la conversation devient longue. Ces quatre habitudes améliorent la qualité des réponses sans toucher à la formulation de vos demandes.</p>
+    </div>
+  </div>
+
+  <div class="related-articles">
+    <h3>Sur le même sujet</h3>
+    <a class="related-link" href="/blog/bien-ecrire-prompt-chatgpt.html">Comment bien écrire un prompt ChatGPT : les techniques qui changent tout →</a>
+    <a class="related-link" href="/blog/utiliser-ia-quand-on-debute.html">Comment utiliser l'IA quand on débute : guide pratique pas à pas →</a>
+    <a class="related-link" href="/blog/cas-usage-ia-quotidien.html">Cas d'usage de l'IA au quotidien : 12 exemples concrets et utiles →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p><a href="/">IA pour Tous</a> · Par Mathieu Giroux, conseiller numérique · <a href="/#chapitres-gratuits">Guide gratuit</a></p>
+</footer>
+
+</body>
+</html>
