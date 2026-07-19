@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Écrire un CV avec l'IA : la méthode pour un CV clair et efficace</title>
+  <meta name="description" content="Comment écrire un CV avec l'IA sans qu'il sonne faux ni générique. La méthode en 3 temps, un prompt prêt à copier, et ce qu'il faut vérifier vous-même." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mathieugiroux.fr/blog/ecrire-cv-avec-ia.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Écrire un CV avec l'IA : la méthode pour un CV clair et efficace",
+    "description": "Comment écrire un CV avec l'IA sans qu'il sonne faux ni générique. La méthode en 3 temps, un prompt prêt à copier, et ce qu'il faut vérifier vous-même.",
+    "author": { "@type": "Person", "name": "Mathieu Giroux" },
+    "publisher": { "@type": "Organization", "name": "IA pour Tous" },
+    "datePublished": "2026-07-12",
+    "dateModified": "2026-07-12"
+  }
+  </script>
+
+  <!-- Schema.org FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Peut-on vraiment écrire un CV entier avec l'IA ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "L'IA peut structurer, reformuler et mettre en valeur un parcours, mais elle ne connaît pas votre vie. Le point de départ doit toujours être vos informations réelles : dates, postes, missions, résultats. L'IA transforme cette matière brute en un CV lisible, elle ne l'invente pas." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment éviter un CV qui sonne générique ou fait avec l'IA ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Donnez un maximum de détails concrets sur votre parcours plutôt qu'une demande vague comme « fais-moi un CV ». Plus vous fournissez de matière précise (missions réelles, chiffres, outils utilisés), moins l'IA a besoin de combler les trous avec des formules toutes faites. Relisez ensuite et remplacez les tournures trop lisses par vos propres mots." }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il un CV différent pour chaque offre d'emploi ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pas un CV entièrement différent, mais un CV adapté sur les points clés : l'ordre des expériences mises en avant, les mots-clés repris de l'offre, le résumé en tête de page. L'IA rend cette adaptation rapide : vous collez l'offre et demandez de réorganiser les mêmes informations selon les priorités du poste." }
+      },
+      {
+        "@type": "Question",
+        "name": "L'IA peut-elle inventer des expériences sur mon CV ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Elle peut enjoliver ou déformer si vous lui donnez trop peu d'informations et qu'elle comble les vides. C'est à vous de vérifier chaque ligne avant d'envoyer le document : dates exactes, intitulés de poste réels, chiffres vérifiables. Un CV inexact peut se retourner contre vous en entretien." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf9f7;
+      --black: #111110;
+      --grey: #6b6b6b;
+      --light-grey: #e8e6e2;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { background: var(--cream); color: var(--black); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+
+    /* NAV */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--light-grey); position: sticky; top: 0; background: var(--cream); z-index: 100; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; text-decoration: none; color: var(--black); }
+    .nav-cta { background: var(--black); color: white; padding: 0.5rem 1.2rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ARTICLE */
+    .article-container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--grey); margin-bottom: 2rem; }
+    .breadcrumb a { color: var(--grey); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--black); }
+
+    .article-meta { font-size: 0.8rem; color: var(--grey); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+
+    .article-intro { font-size: 1.1rem; color: var(--grey); line-height: 1.8; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--light-grey); }
+
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin: 1.8rem 0 0.6rem; }
+    p { margin-bottom: 1.2rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+    li { margin-bottom: 0.6rem; }
+
+    .encadre { background: white; border: 1px solid var(--light-grey); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .encadre-titre { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; color: var(--grey); }
+
+    .snippet { background: white; border: 1px solid var(--light-grey); border-left: 3px solid var(--black); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; font-size: 0.95rem; }
+    .snippet-titre { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; color: var(--grey); }
+    .snippet p { margin-bottom: 0.6rem; font-style: italic; }
+
+    .faq { margin-top: 2.5rem; }
+    .faq-item { border-top: 1px solid var(--light-grey); padding: 1.2rem 0; }
+    .faq-q { font-weight: 600; margin-bottom: 0.5rem; }
+    .faq-a { color: var(--grey); font-size: 0.95rem; }
+
+    .cta-block { background: var(--black); color: white; border-radius: 12px; padding: 2.5rem; margin: 3rem 0; text-align: center; }
+    .cta-block h3 { color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-white { background: white; color: var(--black); padding: 0.8rem 2rem; border-radius: 2rem; font-weight: 600; text-decoration: none; font-size: 0.95rem; display: inline-block; }
+    .btn-white:hover { opacity: 0.9; }
+
+    a { color: var(--black); }
+    a:hover { opacity: 0.65; }
+    .related-articles { border-top: 1px solid var(--light-grey); margin-top: 3rem; padding-top: 2rem; }
+    .related-articles h3 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey); margin-bottom: 1rem; }
+    .related-link { display: block; padding: 1rem 0; border-bottom: 1px solid var(--light-grey); text-decoration: none; color: var(--black); font-weight: 500; }
+    .related-link:hover { opacity: 0.65; }
+    footer { border-top: 1px solid var(--light-grey); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--grey); }
+    footer a { color: var(--grey); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">IA pour Tous .</a>
+  <a class="nav-cta" href="/#chapitres-gratuits">Guide gratuit</a>
+</nav>
+
+<article class="article-container">
+
+  <div class="breadcrumb">
+    <a href="/">Accueil</a> › <a href="/blog/">Blog</a> › Écrire un CV avec l'IA
+  </div>
+
+  <p class="article-meta">Mathieu Giroux · 12 juillet 2026 · 7 min de lecture</p>
+
+  <h1>Écrire un CV avec l'IA : la méthode pour un CV clair et efficace</h1>
+
+  <p class="article-intro">
+    Dans mes ateliers, c'est une des demandes qui revient le plus souvent : "je bloque devant mon CV, je ne sais pas comment présenter mon parcours". L'IA peut vraiment aider, mais pas de la façon dont on l'imagine. Elle ne remplace pas votre expérience, elle vous aide à la mettre en forme. Voici la méthode que je montre en atelier, avec un prompt que vous pouvez copier tel quel.
+  </p>
+
+  <!-- CTA MINI -->
+  <div style="background:white; border:1px solid var(--light-grey); border-radius:8px; padding:1.2rem 1.5rem; margin:2rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
+    <p style="margin:0; font-size:0.95rem;">Vous voulez un point de départ clair sur l'IA au quotidien ? Mon guide gratuit vous accompagne pas à pas.</p>
+    <a href="/#chapitres-gratuits" style="background:var(--black); color:white; padding:0.6rem 1.4rem; border-radius:2rem; font-size:0.85rem; font-weight:600; text-decoration:none; white-space:nowrap;">Télécharger</a>
+  </div>
+
+  <h2>Pourquoi l'IA aide vraiment sur un CV</h2>
+
+  <p>Un CV, c'est rarement un problème de contenu. Vous avez un parcours, des compétences, des expériences. Le blocage vient presque toujours de la mise en forme : comment résumer un poste en trois lignes, comment ne pas se répéter, comment donner envie de lire la suite sans en faire trop. C'est exactement le type de tâche où l'IA excelle : elle structure ce que vous avez déjà, elle ne part pas de rien.</p>
+
+  <p>Le piège, c'est de lui demander "fais-moi un CV" sans rien lui donner en échange. Elle produira alors un CV générique, avec des formules toutes faites qu'un recruteur repère en deux secondes. La méthode qui fonctionne est différente : vous apportez la matière, l'IA s'occupe de la forme.</p>
+
+  <h2>La méthode en trois temps</h2>
+
+  <h3>1. Donnez la matière brute, sans trier</h3>
+  <p>Listez en vrac vos expériences, vos formations, vos missions, même celles qui vous semblent secondaires. Ne cherchez pas à faire des phrases jolies à ce stade, un simple copier-coller ou des notes en style télégraphique suffisent. Plus la matière est riche, plus l'IA a de quoi travailler sans inventer à votre place.</p>
+
+  <h3>2. Précisez le poste visé et l'angle</h3>
+  <p>Un même parcours ne se présente pas de la même façon selon le poste visé. Dites à l'IA quel métier ou quelle offre vous ciblez, et ce que vous voulez mettre en avant : votre expérience terrain, votre capacité d'adaptation, une compétence technique précise. Sans cette précision, l'IA choisit à votre place, et pas toujours le bon angle.</p>
+
+  <h3>3. Demandez un format exploitable</h3>
+  <p>Un CV a des codes : rubriques courtes, verbes d'action, résultats chiffrés quand c'est possible, une seule page dans la plupart des cas. Demandez explicitement ce format plutôt qu'un texte continu. Vous pouvez aussi préciser si votre CV doit rester lisible par les logiciels de tri automatique utilisés par certains recruteurs, en évitant tableaux complexes et mises en page trop créatives.</p>
+
+  <div class="snippet">
+    <p class="snippet-titre">Un prompt prêt à copier</p>
+    <p>"Voici mon parcours en vrac : [collez vos expériences, formations, missions]. Je vise un poste de [intitulé du poste ou secteur]. Je veux mettre en avant [ce que vous voulez faire ressortir]. Rédige un CV structuré en rubriques (résumé, expériences, formation, compétences), avec des phrases courtes et des verbes d'action, sans inventer d'information que je ne t'ai pas donnée."</p>
+  </div>
+
+  <p>La dernière phrase du prompt n'est pas un détail. Elle rappelle à l'IA de rester dans les faits que vous lui avez fournis, et évite qu'elle comble les manques avec des généralités.</p>
+
+  <h2>Ce que l'IA fait bien, et ce qu'il faut vérifier vous-même</h2>
+
+  <h3>Ce qu'elle fait bien</h3>
+  <p>Structurer un parcours confus, reformuler une mission en langage professionnel, proposer plusieurs versions d'une même phrase pour que vous choisissiez celle qui vous ressemble, adapter le ton selon le secteur visé. Sur tout cela, elle vous fait gagner un temps réel.</p>
+
+  <h3>Ce qu'il faut vérifier</h3>
+  <p>Les dates, les intitulés de poste exacts, les chiffres avancés. Une IA peut arrondir une durée, généraliser une mission ou ajouter un détail qui sonne bien mais qui n'est pas exact. Relisez chaque ligne avant d'envoyer votre CV : c'est votre nom en haut du document, pas celui de l'IA, et une inexactitude peut se retourner contre vous en entretien.</p>
+
+  <h2>Adapter son CV à chaque offre sans tout réécrire</h2>
+
+  <p>Vous n'avez pas besoin de repartir de zéro à chaque candidature. Une fois votre CV de base construit, collez le texte de la nouvelle offre et demandez à l'IA de réorganiser les mêmes informations en mettant en avant ce qui correspond le mieux : les expériences les plus pertinentes en premier, les mots-clés de l'offre repris dans vos rubriques. C'est un ajustement de quelques minutes, pas une réécriture complète.</p>
+
+  <h2>Et la lettre de motivation ?</h2>
+
+  <p>La logique est la même : vous apportez votre parcours et l'offre visée, l'IA propose une trame. Donnez-lui aussi une raison concrète et personnelle de candidater à ce poste précis, sinon la lettre restera générale. Le premier jet sert de base, vous le retravaillez ensuite avec vos mots pour qu'il sonne comme vous, pas comme un modèle trouvé en ligne.</p>
+
+  <div class="encadre">
+    <p class="encadre-titre">À retenir</p>
+    <ul>
+      <li>Donnez la matière brute de votre parcours, l'IA n'invente rien de bon à partir de rien.</li>
+      <li>Précisez le poste visé et ce que vous voulez mettre en avant.</li>
+      <li>Demandez un format CV classique : rubriques courtes, verbes d'action, une page.</li>
+      <li>Vérifiez toujours dates, intitulés et chiffres avant d'envoyer le document.</li>
+      <li>Un CV de base bien construit s'adapte en quelques minutes à chaque offre.</li>
+    </ul>
+  </div>
+
+  <div class="cta-block">
+    <h3>Passez de la lecture à la pratique</h3>
+    <p>Cette méthode de prompt, contexte, objectif, format, c'est le cœur de ce que j'enseigne dans mes livres "IA pour Tous", écrits pour quelqu'un qui part de zéro, sans aucune formation technique.</p>
+    <a class="btn-white" href="/#chapitres-gratuits">Télécharger le guide gratuit</a>
+    <a class="btn-white" href="https://www.amazon.fr/dp/B0GX2Y21Y3" target="_blank" rel="noopener" style="margin-top:0.6rem;">L1 : "IA pour Tous" sur Amazon</a>
+    <a class="btn-white" href="https://www.amazon.fr/dp/B0H353RTPC" target="_blank" rel="noopener" style="margin-top:0.6rem;">L2 : "Prompter comme un pro" sur Amazon</a>
+  </div>
+
+  <div class="faq">
+    <h2>Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">Peut-on vraiment écrire un CV entier avec l'IA ?</p>
+      <p class="faq-a">L'IA peut structurer, reformuler et mettre en valeur un parcours, mais elle ne connaît pas votre vie. Le point de départ doit toujours être vos informations réelles : dates, postes, missions, résultats. L'IA transforme cette matière brute en un CV lisible, elle ne l'invente pas.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Comment éviter un CV qui sonne générique ou fait avec l'IA ?</p>
+      <p class="faq-a">Donnez un maximum de détails concrets sur votre parcours plutôt qu'une demande vague comme « fais-moi un CV ». Plus vous fournissez de matière précise, moins l'IA a besoin de combler les trous avec des formules toutes faites. Relisez ensuite et remplacez les tournures trop lisses par vos propres mots.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Faut-il un CV différent pour chaque offre d'emploi ?</p>
+      <p class="faq-a">Pas un CV entièrement différent, mais un CV adapté sur les points clés : l'ordre des expériences mises en avant, les mots-clés repris de l'offre, le résumé en tête de page. L'IA rend cette adaptation rapide : vous collez l'offre et demandez de réorganiser les mêmes informations selon les priorités du poste.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">L'IA peut-elle inventer des expériences sur mon CV ?</p>
+      <p class="faq-a">Elle peut enjoliver ou déformer si vous lui donnez trop peu d'informations et qu'elle comble les vides. C'est à vous de vérifier chaque ligne avant d'envoyer le document : dates exactes, intitulés de poste réels, chiffres vérifiables. Un CV inexact peut se retourner contre vous en entretien.</p>
+    </div>
+  </div>
+
+  <div class="related-articles">
+    <h3>Sur le même sujet</h3>
+    <a class="related-link" href="/blog/bien-ecrire-prompt-chatgpt.html">Comment bien écrire un prompt ChatGPT : les techniques qui changent tout →</a>
+    <a class="related-link" href="/blog/cas-usage-ia-quotidien.html">Cas d'usage de l'IA au quotidien : 12 exemples concrets et utiles →</a>
+    <a class="related-link" href="/blog/utiliser-ia-quand-on-debute.html">Comment utiliser l'IA quand on débute : guide pratique pas à pas →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p><a href="/">IA pour Tous</a> · Par Mathieu Giroux, conseiller numérique · <a href="/#chapitres-gratuits">Guide gratuit</a></p>
+</footer>
+
+</body>
+</html>
