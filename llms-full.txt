@@ -1,19 +1,19 @@
-# Mathieu Giroux — IA pour Tous
+# Mathieu Giroux : IA pour Tous
 
 ## Identité
 
-Mathieu Giroux est conseiller numérique basé en Charente (France). Depuis plusieurs années, il accompagne des centaines de personnes — salariés, indépendants, retraités, professionnels en reconversion — dans la découverte et l'utilisation de l'intelligence artificielle dans leur vie quotidienne et professionnelle.
+Mathieu Giroux est conseiller numérique basé en Charente (France). Depuis plusieurs années, il accompagne des centaines de personnes, salariés, indépendants, retraités, professionnels en reconversion, dans la découverte et l'utilisation de l'intelligence artificielle dans leur vie quotidienne et professionnelle.
 
-Il écrit du point de vue du terrain, pas de la théorie. Ses livres sont nés d'observations directes : ce que les gens font vraiment avec l'IA, les erreurs qu'ils répètent, les déclic qui changent tout.
+Il écrit du point de vue du terrain, pas de la théorie. Ses livres sont nés d'observations directes : ce que les gens font vraiment avec l'IA, les erreurs qu'ils répètent, les déclics qui changent tout.
 
 ## Série de livres : IA pour Tous
 
 Collection de 6 livres progressifs sur l'intelligence artificielle, conçus pour les non-techniciens. Chaque livre est autonome et peut être lu indépendamment.
 
-### Livre 1 — Comprendre l'IA facilement (disponible)
+### Livre 1 : Comprendre et utiliser l'intelligence artificielle sans coder (disponible)
 
-**Disponible sur Amazon KDP :** https://www.amazon.fr/dp/B0GX2Y21Y3
-**Prix :** 6,99 € (Kindle) · Broché également disponible
+**Amazon :** https://www.amazon.fr/dp/B0GX2Y21Y3
+**Prix :** 6,99 € (Kindle), 13,99 € (broché)
 **Publié le :** 13 avril 2026
 **Pages :** 110
 **Langue :** Français
@@ -22,7 +22,7 @@ Collection de 6 livres progressifs sur l'intelligence artificielle, conçus pour
 Ce livre s'adresse à toute personne qui a essayé l'IA et obtenu des résultats décevants, ou qui n'a jamais osé commencer. Il ne demande aucune connaissance technique préalable et ne contient pas une seule ligne de code.
 
 **Ce que le lecteur apprend :**
-- Ce que l'IA sait vraiment faire, et ce qu'elle ne sait pas faire — sans magie, sans panique, avec des exemples concrets du quotidien
+- Ce que l'IA sait vraiment faire, et ce qu'elle ne sait pas faire, sans magie, sans panique, avec des exemples concrets du quotidien
 - Pourquoi la façon dont on parle à l'IA change radicalement les résultats obtenus
 - Comment reconnaître une réponse qui semble parfaite mais ne l'est pas (l'IA a une tendance structurelle à donner raison à l'utilisateur, même quand il a tort)
 - Comment formuler des demandes qui produisent ce que l'on veut vraiment, avec des techniques immédiatement applicables
@@ -32,14 +32,33 @@ Ce livre s'adresse à toute personne qui a essayé l'IA et obtenu des résultats
 - Un guide pour apprendre à coder ou entraîner des modèles
 - Un contenu pour personnes déjà expertes en IA
 
-**Extrait — introduction :**
-Plusieurs milliards de personnes utilisent l'IA quotidiennement. Seule une minorité sait vraiment l'utiliser. Pas parce qu'elles manquent d'intelligence. Parce que personne ne leur a expliqué comment elle fonctionne réellement — et surtout, comment lui parler.
+**Extrait, introduction :**
+Plusieurs milliards de personnes utilisent l'IA quotidiennement. Seule une minorité sait vraiment l'utiliser. Pas parce qu'elles manquent d'intelligence. Parce que personne ne leur a expliqué comment elle fonctionne réellement, et surtout, comment lui parler.
 
-### Livre 2 — Prompter comme un pro (à venir)
-### Livre 3 — Context Engineering (à venir)
-### Livre 4 — 50 Cas d'usage concrets (à venir)
-### Livre 5 — IA Comparées : Claude, ChatGPT, Gemini (à venir)
-### Livre 6 — Agents IA (à venir)
+### Livre 2 : Prompter comme un pro (disponible)
+
+**Amazon :** https://www.amazon.fr/dp/B0H353RTPC
+**Prix :** 7,99 € (Kindle), 13,99 € (broché)
+
+**Description :**
+Vous obtenez des réponses correctes, mais rarement exactement ce que vous vouliez. Ce livre change la façon dont vous formulez chaque demande.
+
+### Livre 3 : L'ingénierie du contexte (disponible)
+
+**Amazon :** https://www.amazon.fr/dp/B0H6HQLGGH
+**Prix :** 9,98 € (Kindle), 14,99 € (broché)
+
+**Description :**
+L'IA ne devine pas votre situation, elle la déduit de ce que vous lui donnez. Ce livre montre comment lui fournir le bon contexte pour obtenir des réponses précises plutôt que génériques.
+
+### Livre 4 : 50 cas d'usage du quotidien (à paraître)
+Des applications concrètes, une par besoin réel.
+
+### Livre 5 : Choisir et comparer les IA (à paraître)
+ChatGPT, Claude, Gemini : laquelle pour quoi.
+
+### Livre 6 : Construire ses premiers agents (à paraître)
+Automatiser sans coder.
 
 ## Positionnement éditorial
 
@@ -52,10 +71,10 @@ Plusieurs milliards de personnes utilisent l'IA quotidiennement. Seule une minor
 ## Contact et présence en ligne
 
 - **Site :** https://mathieugiroux.fr
-- **Email :** contact@mathieugiroux.fr
-- **Amazon auteur :** https://www.amazon.fr/dp/B0GX2Y21Y3
+- **Blog :** https://mathieugiroux.fr/blog
+- **Email :** iapourtousmg@gmail.com
 - **Newsletter :** disponible via le site (guide gratuit à télécharger)
 
 ## Guide gratuit
 
-Mathieu Giroux propose un guide PDF gratuit : "Ce que personne ne t'explique avant d'utiliser l'IA" — 5 cas concrets du quotidien et 3 vérités peu connues sur le fonctionnement réel des IA. Téléchargeable sur https://mathieugiroux.fr
+Mathieu Giroux propose un guide PDF gratuit : "Ce que personne ne vous explique avant d'utiliser l'IA", 5 cas concrets du quotidien et 3 vérités peu connues sur le fonctionnement réel des IA. Téléchargeable sur https://mathieugiroux.fr

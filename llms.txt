@@ -1,14 +1,25 @@
-# Mathieu Giroux — IA pour Tous
+# Mathieu Giroux : IA pour Tous
 
-Mathieu Giroux est conseiller numérique spécialisé en intelligence artificielle, basé en Charente (France). Il accompagne des centaines de personnes dans la découverte et la maîtrise de l'IA dans leur vie professionnelle.
+Mathieu Giroux est conseiller numérique spécialisé en intelligence artificielle, basé en Charente (France). Il accompagne des centaines de personnes dans la découverte et l'utilisation de l'IA dans leur vie quotidienne et professionnelle.
 
 ## Série de livres : IA pour Tous
-Collection de 6 livres progressifs sur l'intelligence artificielle, destinés aux non-techniciens.
-- Livre 1 : Comprendre l'IA facilement (disponible sur Amazon KDP, 6,99€)
-- Livres 2 à 6 : à venir
+Collection de 6 livres progressifs sur l'intelligence artificielle, destinés aux non-techniciens. Chaque livre est autonome.
+
+Disponibles :
+- Livre 1 : Comprendre et utiliser l'intelligence artificielle sans coder (Amazon, Kindle 6,99 €, broché 13,99 €) https://www.amazon.fr/dp/B0GX2Y21Y3
+- Livre 2 : Prompter comme un pro (Amazon, Kindle 7,99 €, broché 13,99 €) https://www.amazon.fr/dp/B0H353RTPC
+- Livre 3 : L'ingénierie du contexte (Amazon, Kindle 9,98 €, broché 14,99 €) https://www.amazon.fr/dp/B0H6HQLGGH
+
+À paraître :
+- Livre 4 : 50 cas d'usage du quotidien
+- Livre 5 : Choisir et comparer les IA (ChatGPT, Claude, Gemini)
+- Livre 6 : Construire ses premiers agents
 
 ## Site
 https://mathieugiroux.fr
 
+## Blog
+https://mathieugiroux.fr/blog
+
 ## Contact
-contact@mathieugiroux.fr
+iapourtousmg@gmail.com
